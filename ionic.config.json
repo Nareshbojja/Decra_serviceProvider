@@ -1,0 +1,7 @@
+{
+  "name": "servicepro",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

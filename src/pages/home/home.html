@@ -1,0 +1,33 @@
+
+<ion-content class="page">
+  <img class="hdrlogo" src="assets/imgs/Decra_white_clear.png">
+  <h5 class="loginTxt">SERVICE PROVIDER</h5>
+
+  <div style="margin: 18%;">
+    <h5 class="lbltxt">COMPANY NAME</h5>
+
+    <ion-item class="inputlogin">
+      <ion-input type="text" placeholder="Username"  [(ngModel)]="sdata.email" class="inputcls"></ion-input>
+    </ion-item>
+    <h5 class="lbltxt" style="margin-top:5%;">COMPANY PASSWORD</h5>
+    <ion-item class="inputlogin">
+      <ion-input type="text" name="password" class="inputcls"  [(ngModel)]="sdata.password" placeholder="Password" ngModel #password="ngModel"
+        required pattern=".{4,10}"></ion-input>
+
+      <!-- <button *ngIf="!showPass" ion-button clear color="dark" class="eyecls" type="button" item-right (click)="showPassword()">
+        <ion-icon name="ios-eye-off-outline"></ion-icon>
+      </button>
+      <button *ngIf="showPass" ion-button clear color="dark" class="eyecls" type="button" item-right (click)="showPassword()">
+        <ion-icon name="ios-eye-outline"></ion-icon>
+      </button> -->
+
+    </ion-item>
+  
+
+    <button (click)="Login()" ion-button class="outline loginbtn" mode="md" color="white" outline round large>
+      Login
+    </button>
+
+  </div>
+
+</ion-content>
