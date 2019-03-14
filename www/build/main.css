@@ -33843,3 +33843,24 @@ page-main .divide {
   height: 120%;
   background-color: #afa7a7;
 }
+
+page-select-driver .dropdowncls {
+  background: transparent;
+  margin: 12px;
+  width: 46%;
+  border: 2px solid #fff !important;
+  border-radius: 40px;
+  margin-top: 40%;
+  height: 8%;
+  margin-top: 20%;
+  margin-left: 28%;
+}
+
+page-select-driver .selectcls {
+  color: aliceblue !important;
+}
+
+page-select-driver .item-input .label-md, page-select-driver .item-select .label-md, page-select-driver .item-datetime .label-md {
+  color: #999;
+  FONT-SIZE: 2EM;
+}

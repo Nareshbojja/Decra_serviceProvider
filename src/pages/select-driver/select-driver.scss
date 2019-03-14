@@ -1,0 +1,20 @@
+page-select-driver {
+    .dropdowncls{
+        background: transparent;
+        margin: 12px;
+        width: 46%;
+        border: 2px solid #fff !important;
+        border-radius: 40px;
+        margin-top: 40%;
+        height: 8%;
+        margin-top: 20%;
+        margin-left: 28%;
+    }
+    .selectcls{
+        color: aliceblue !important;
+    }
+    .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
+        color: #999;
+        FONT-SIZE: 2EM;
+    }
+}

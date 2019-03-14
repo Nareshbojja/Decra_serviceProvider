@@ -3,6 +3,7 @@ import { Platform } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import firebase from 'firebase'; 
+import { LocalStorageProvider } from '../providers/local-storage/local-storage'; 
 
 import { HomePage } from '../pages/home/home';
 import { MainPage } from '../pages/main/main'
@@ -11,9 +12,9 @@ import { MainPage } from '../pages/main/main'
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = HomePage;
+  rootPage:any;
 
-  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen) {
+  constructor(platform: Platform, statusBar: StatusBar, splashScreen: SplashScreen, private storagePro: LocalStorageProvider) {
     platform.ready().then(() => {
       // Okay, so the platform is ready and our plugins are available.
       // Here you can do any higher level native things you might need.
@@ -35,6 +36,21 @@ export class MyApp {
     })
       statusBar.styleDefault();
       splashScreen.hide();
+      try {
+        this.storagePro.getData('service_provier_details').then((data: any) => {
+          if (data) {
+            console.log("name===" + data.name);
+            this.rootPage = MainPage;
+          }
+          else {
+            this.rootPage = HomePage;
+
+          }
+        })
+      }
+      catch(err){
+        console.log('firebase error');
+      }
     });
   }
 }

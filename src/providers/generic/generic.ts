@@ -50,6 +50,65 @@ export class GenericProvider {
       });
     });
   }
+
+  getDriverEmails(){
+    return new Promise((resolve, reject) => {
+      firebase.database().ref('driver_details/').on('value', itemSnapshot => {
+        let drivers = [];
+        itemSnapshot.forEach(itemSnap => {
+          if (itemSnap.val().avaialble === "yes") {
+            console.log(itemSnap.val().email);
+            drivers.push(itemSnap.val().email);
+          }
+          return false;
+        });
+        resolve(drivers);
+      }, (error) => {
+        reject(error);
+      });
+    });
+  }
+
+  updateStatus(order_id){
+    let ref = "orders/"+order_id+"/";
+    return new Promise((resolve, reject) => {
+      firebase.database().ref(ref).on('value', itemSnapshot => {
+        firebase.database().ref(ref).update({
+          order_status: "on_the_way"
+        });
+
+        console.log(itemSnapshot.val());
+        resolve(true);
+      }, (error) => {
+        reject(error);
+      });
+  })
+}
+updateDriver(order_id){
+  // let ref = "driverdetails/"+order_id+"/";
+  return new Promise((resolve, reject) => {
+    firebase.database().ref('driver_details/').orderByChild('email').equalTo(order_id).once('value', function (snapshot) {
+      var driverDetails = snapshot.val();
+     
+      console.log(snapshot.key);
+      console.log(snapshot.val());
+      let obj = snapshot.val();
+      console.log(Object.keys(obj));
+      let key = Object.keys(obj);
+      let ref = "driver_details/"+key+"/";
+      console.log(ref);
+//  firebase.database().ref(ref).on('value', itemSnapshot => {
+        firebase.database().ref(ref).update({
+          avaialble: "no"
+        });
+    //  })
+      resolve(driverDetails);
+      return false;
+    }, (error) => {
+      reject(error);
+    });
+  });
+}
   public showLoader() {
     this.loading = this.loadingCtrl.create({
       content: 'Please wait...'

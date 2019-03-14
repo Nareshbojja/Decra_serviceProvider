@@ -1,0 +1,11 @@
+<ion-content class="page">
+  <ion-item class="dropdowncls" style="margin-top: 25px;">
+    <ion-label>Choose Driver</ion-label>
+    <ion-select interface="action-sheet" [(ngModel)]="sel_mail" (ionChange)="seldriver();" class="selectcls">
+      <ion-option *ngFor="let cat of driver_emails" value="{{cat}}">{{cat}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <button (click)="done()" ion-button class="outline loginbtn" mode="md" color="white" outline round large>
+    Login
+  </button>
+</ion-content>

@@ -7,6 +7,9 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { MainPage } from '../pages/main/main'
+import { SelectDriverPage } from '../pages/select-driver/select-driver';
+import { MoreinfoPage } from '../pages/moreinfo/moreinfo';
+import { OrderHistoryPage } from '../pages/order-history/order-history';
 
 import { StorageProvider } from '../providers/storage/storage';
 import { IonicStorageModule } from '@ionic/Storage';
@@ -18,7 +21,7 @@ import { LocalStorageProvider } from '../providers/local-storage/local-storage';
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,MainPage
+    HomePage,MainPage,SelectDriverPage,MoreinfoPage,OrderHistoryPage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,7 @@ import { LocalStorageProvider } from '../providers/local-storage/local-storage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,MainPage
+    HomePage,MainPage,SelectDriverPage,MoreinfoPage,OrderHistoryPage
   ],
   providers: [
     StatusBar,
