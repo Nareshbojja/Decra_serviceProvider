@@ -1,20 +1,28 @@
 page-select-driver {
-    .dropdowncls{
-        background: transparent;
-        margin: 12px;
-        width: 46%;
-        border: 2px solid #fff !important;
-        border-radius: 40px;
-        margin-top: 40%;
-        height: 8%;
-        margin-top: 20%;
-        margin-left: 28%;
+        .contact-input{
+            margin: 2% 9% 7% 5%;
+            font-size: 2em;
+            color: #fff;
+            background: transparent;
+            border: 2px solid #fff;
+            width: 90%;
+            border-radius: 15px;
+        }
+        .outerBox{
+            width: 40%;
+            height: 26%;
+            background: #bdbdbd;
+            border-radius: 36px;
+            margin: 25% 25% 25% 30%;
+        }
+        .rsntext{
+            COLOR: #FFF;
+            margin-left: 5%;
+            font-size: 2.5em;
+            padding-top: 4%;
+        }
+        .loginbtn{
+            margin-top: -2%;
+        }
     }
-    .selectcls{
-        color: aliceblue !important;
-    }
-    .item-input .label-md, .item-select .label-md, .item-datetime .label-md {
-        color: #999;
-        FONT-SIZE: 2EM;
-    }
-}
+    

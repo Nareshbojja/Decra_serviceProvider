@@ -1,78 +1,79 @@
 page-home {
-.hdrlogo{
-    width: 65%;
-    margin: 15% 16% 4% 18%;
-}
-    
-.loginTxt{
-    text-align: center;
-    color: #fff;
-    font-size: 3.0em;
-    margin-top: 5px;
-}
-.lbltxt{
-    text-align: center;
-    color: #fff;
-    font-size: 2.0em;
-    margin-top: 5px;
-}
-    .list-md .item-block .item-inner{
-        border: 2px solid #fefefe;
-        border-radius: 25px;
-    }
-
-    
-    .heading{
+    .hdrlogo{
         text-align: center;
-        margin-top: 15px;
+        margin-top: 10%;
+        width: auto;
     }
-      .no-validation-line.ng-invalid{
-        border-bottom-color: transparent;
-     }
-     .no-validation-line.ng-valid{
-        border-bottom-color: transparent;
-     }
-     inputlogin item item-block item-md item-input input-has-value item-input-has-value input-has-focus item-input-has-focus{
-        border-bottom: transparent; 
-     }
-     .button-outline-md-white:hover:not(.disable-hover){
-        background-color: #ab3643;
-    
-     }
-    
-    }
-    inputlogin item item-block item-md item-input input-has-value item-input-has-value input-has-focus item-input-has-focus{
-        border-bottom: transparent; 
-     }
-     .button-outline-md-white:hover:not(.disable-hover){
-        background-color: #ab3643;
-    
-     }
-    .inputcls{
-        padding-left:10px 
-    }
-    .inputlogin{
-        margin-left: 6% !important;
-        border: 2px solid #fff;
-        border-radius: 35px;
-        /* margin-left: 11px; */
-        background: transparent;
-        margin: 12px;
-        width: 90%;
-        padding-left: -1px !important;
-        font-size: 2.5em;
-       }
-    
-    .loginbtn{
-        width: 52%;
-        margin-top: 15%;
-        font-size: 1.8rem;
-        margin-left: 25%;
-        background: -webkit-gradient(linear, left top, right top, from(#aa3642), to(#ed1c24));
-        background: linear-gradient(to right, #32db64, #2ec95c);
-        border-color: transparent;
+        
+    .loginTxt{
+        text-align: center;
         color: #fff;
-        height: 86px;
-        border-radius: 58px;
-        font-size: 2.5em;
+        font-size: 3.0em;
+        margin-top: 4%;
     }
+    .lbltxt{
+        text-align: center;
+        color: #fff;
+        font-size: 2.0em;
+        margin-top: 5px;
+    }
+        .list-md .item-block .item-inner{
+            border: 2px solid #fefefe;
+            border-radius: 25px;
+        }
+    
+        
+        .heading{
+            text-align: center;
+            margin-top: 15px;
+        }
+          .no-validation-line.ng-invalid{
+            border-bottom-color: transparent;
+         }
+         .no-validation-line.ng-valid{
+            border-bottom-color: transparent;
+         }
+         inputlogin item item-block item-md item-input input-has-value item-input-has-value input-has-focus item-input-has-focus{
+            border-bottom: transparent; 
+         }
+         .button-outline-md-white:hover:not(.disable-hover){
+            background-color: #ab3643;
+        
+         }
+        
+        }
+        inputlogin item item-block item-md item-input input-has-value item-input-has-value input-has-focus item-input-has-focus{
+            border-bottom: transparent; 
+         }
+         .button-outline-md-white:hover:not(.disable-hover){
+            background-color: #ab3643;
+        
+         }
+        .inputcls{
+            padding-left:10px 
+        }
+        .inputlogin{
+            margin-left: 6% !important;
+            border: 2px solid #fff;
+            border-radius: 35px;
+            /* margin-left: 11px; */
+            background: transparent;
+            margin: 12px;
+            width: 90%;
+            padding-left: -1px !important;
+            font-size: 2.5em;
+           }
+        
+        .loginbtn{
+            width: 52%;
+            margin-top: 15%;
+            font-size: 1.8rem;
+            margin-left: 25%;
+            background: -webkit-gradient(linear, left top, right top, from(#aa3642), to(#ed1c24));
+            background: linear-gradient(to right, #32db64, #2ec95c);
+            border-color: transparent;
+            color: #fff;
+            height: 86px;
+            border-radius: 58px;
+            font-size: 2.5em;
+        }

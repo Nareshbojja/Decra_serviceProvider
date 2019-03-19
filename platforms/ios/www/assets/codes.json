@@ -1,0 +1,159 @@
+{
+  "countries": [
+    {
+      "name": "Egypt",
+      "alpha2Code": "EG",
+      "alpha3Code": "EGY",
+      "callingCodes": "+20",
+      "flag": "assets/flags/egy.svg"
+    },
+    {
+      "name": "Algeria",
+      "alpha2Code": "DZ",
+      "alpha3Code": "DZA",
+      "callingCodes": "+213",
+      "flag": "assets/flags/esh.svg"
+    },
+    {
+      "name": "South Sudan",
+      "alpha2Code": "SS",
+      "alpha3Code": "SSD",
+      "callingCodes": "+211",
+	   "flag": "assets/flags/ssd.svg"
+
+    },
+    {
+      "name": "Iraq",
+      "alpha2Code": "IQ",
+      "alpha3Code": "IRQ",
+      "flag": "assets/flags/ssd.svg",
+      "callingCodes": "+964"
+    },
+    {
+      "name": "Morocco",
+      "alpha2Code": "MA",
+      "alpha3Code": "MAR",
+      "flag": "assets/flags/mar.svg",
+      "callingCodes": "+212"
+    },
+    {
+      "name": "Saudi Arabia",
+      "alpha2Code": "SA",
+      "alpha3Code": "SAU",
+      "flag": "assets/flags/sau.svg",
+      "callingCodes": "+966"
+    },
+    {
+      "name": "Yemen",
+      "alpha2Code": "YE",
+      "alpha3Code": "YEM",
+      "flag": "assets/flags/yem.svg",
+      "callingCodes": "+967"
+    },
+    {
+      "name": "Syria",
+      "alpha2Code": "SY",
+      "alpha3Code": "SYR",
+      "flag": "assets/flags/syr.svg",
+      "callingCodes": "+963"
+    },
+    {
+      "name": "Somalia",
+      "alpha2Code": "SO",
+      "alpha3Code": "SOM",
+      "flag": "assets/flags/som.svg",
+      "callingCodes": "+252"
+    },
+    {
+      "name": "Tunisia",
+      "alpha2Code": "TN",
+      "alpha3Code": "TUN",
+      "flag": "assets/flags/tun.svg",
+      "callingCodes": "+216"
+    },
+    {
+      "name": "Jordan",
+      "alpha2Code": "JO",
+      "alpha3Code": "JOR",
+      "flag": "assets/flags/jor.svg",
+      "callingCodes": "+962"
+    },
+    {
+      "name": "United Arab Emirates",
+      "alpha2Code": "AE",
+      "alpha3Code": "ARE",
+      "flag": "assets/flags/are.svg",
+      "callingCodes": "+971"
+    },
+    {
+      "name": "Libya",
+      "alpha2Code": "LY",
+      "alpha3Code": "LBY",
+      "flag": "assets/flags/lby.svg",
+      "callingCodes": "+218"
+    },
+    {
+      "name": "Lebanon",
+      "alpha2Code": "LB",
+      "alpha3Code": "LBN",
+      "flag": "assets/flags/lbn.svg",
+      "callingCodes": "+961"
+    },
+    {
+      "name": "Palestine",
+      "alpha2Code": "PS",
+      "alpha3Code": "PSE",
+      "flag": "assets/flags/pse.svg",
+      "callingCodes": "+970"
+    },
+    {
+      "name": "Oman",
+      "alpha2Code": "OM",
+      "alpha3Code": "OMN",
+      "flag": "assets/flags/omn.svg",
+      "callingCodes": "+968"
+    },
+    {
+      "name": "Kuwait",
+      "alpha2Code": "KW",
+      "alpha3Code": "KWT",
+      "flag": "assets/flags/kwt.svg",
+      "callingCodes": "+965"
+    },
+    {
+      "name": "Mauritania",
+      "alpha2Code": "MR",
+      "alpha3Code": "MRT",
+      "flag": "assets/flags/mrt.svg",
+      "callingCodes": "+222"
+    },
+    {
+      "name": "Qatar",
+      "alpha2Code": "QA",
+      "alpha3Code": "QAT",
+      "callingCodes": "+974",
+	        "flag": "assets/flags/qat.svg"
+    },
+    {
+      "name": "Bahrain",
+      "alpha2Code": "BH",
+      "alpha3Code": "BHR",
+      "flag": "assets/flags/bhr.svg",
+      "callingCodes": "+973"
+    },
+    {
+      "name": "Djibouti",
+      "alpha2Code": "DJ",
+      "alpha3Code": "DJI",
+      "flag": "assets/flags/dji.svg",
+      "callingCodes": "+253"
+    },
+    {
+      "name": "Comoros",
+      "alpha2Code": "KM",
+      "alpha3Code": "COM",
+      "flag": "assets/flags/com.svg",
+      "callingCodes": "+269"
+    }
+  ]
+}

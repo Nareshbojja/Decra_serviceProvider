@@ -33686,16 +33686,112 @@ ion-navbar.toolbar {
   background-color: transparent;
 }
 
+.trbg {
+  height: 200px;
+  background-color: #B03540 !important;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#B03540), to(#D5222D)) !important;
+  background-image: linear-gradient(#B03540, #D5222D) !important;
+}
+
+.p18 {
+  padding: 18px !important;
+}
+
+.p36 {
+  padding: 36px !important;
+}
+
+table > tbody > tr > td {
+  padding: 70px 30px !important;
+  border: 1px solid #2B4252;
+}
+
+.mt10 {
+  margin-top: 10px !important;
+}
+
+.b-r {
+  border-right: 1px solid #ffffff;
+}
+
+.datagrid {
+  margin: 0% !important;
+  padding: 4%;
+}
+
+.datagrid1 {
+  margin: 0% !important;
+  padding: 12%;
+}
+
+th {
+  text-transform: uppercase;
+}
+
+.table-s {
+  color: #ffffff;
+  font-size: 2.5em;
+  padding: 0px 20px;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.btn-green {
+  background-color: #46BC68 !important;
+}
+
+.btn-s-g {
+  color: #ffffff;
+  font-size: 1em;
+  padding: 0px 20px;
+  background-color: #46BC68 !important;
+}
+
+.btn-red {
+  background-color: #F0704A !important;
+}
+
+.btn-s-r {
+  color: #ffffff;
+  font-size: 1em;
+  padding: 0px 20px;
+  background-color: #F0704A !important;
+}
+
+.btn-grey {
+  background-color: #ABABAB !important;
+}
+
+.btn-shadeblue {
+  background-color: #122b40 !important;
+}
+
+.btn-transp {
+  background-color: #2b4253 !important;
+}
+
+.btn-s-gy {
+  color: #98394D;
+  font-size: 1em;
+  padding: 0px 20px;
+  background-color: #ABABAB !important;
+}
+
+.f3em {
+  font-size: 3em;
+}
+
 page-home .hdrlogo {
-  width: 65%;
-  margin: 15% 16% 4% 18%;
+  text-align: center;
+  margin-top: 10%;
+  width: auto;
 }
 
 page-home .loginTxt {
   text-align: center;
   color: #fff;
   font-size: 3.0em;
-  margin-top: 5px;
+  margin-top: 4%;
 }
 
 page-home .lbltxt {
@@ -33770,29 +33866,36 @@ inputlogin item item-block item-md item-input input-has-value item-input-has-val
 }
 
 page-main .hdrlogo {
-  max-width: 50%;
+  height: 130px;
+  width: auto;
+}
+
+page-main .p510 {
+  padding: 25px 0px 25px 45px;
 }
 
 page-main .mainpageDiv {
-  float: right;
   border-left: 6px solid #fff;
-  padding-left: 17px;
   font-size: 21px;
-  margin: 3% 15% 0% 0%;
+  margin: 1% 0% 1% 2%;
 }
 
 page-main .mainpageText {
   font-size: 2.2em;
   color: #fff;
+  margin: 0;
+}
+
+page-main .welcomeDiv {
+  float: right;
+  margin-top: -7%;
+  margin-right: 3%;
 }
 
 page-main .welcomeText {
   font-size: 3em;
   color: #fff;
-  text-align: -webkit-right;
   text-transform: uppercase;
-  margin-right: 4%;
-  margin-top: 9%;
 }
 
 page-main .loginbtn {
@@ -33844,23 +33947,184 @@ page-main .divide {
   background-color: #afa7a7;
 }
 
-page-select-driver .dropdowncls {
+page-main tr:nth-of-type(odd) {
+  background: #2B4252;
+}
+
+page-main .mt80per {
+  margin-top: 80%;
+}
+
+page-moreinfo #map {
+  height: 35%;
+  width: 35%;
+  ackground: #9e02028a;
+}
+
+page-order-history .hdrlogo {
+  height: 130px;
+  width: auto;
+}
+
+page-order-history .datagrid1 {
+  padding: 6% 10% 5% 12%;
+}
+
+page-order-history .p510 {
+  padding: 25px 0px 25px 45px;
+}
+
+page-order-history .mainpageDiv {
+  border-left: 6px solid #fff;
+  font-size: 21px;
+  margin: 1% 0% 1% 2%;
+}
+
+page-order-history .mainpageText {
+  font-size: 2.2em;
+  color: #fff;
+  margin: 0;
+}
+
+page-order-history .welcomeDiv {
+  float: right;
+  margin-top: -7%;
+  margin-right: 3%;
+}
+
+page-order-history .welcomeText {
+  font-size: 3em;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+page-order-history .loginbtn {
+  width: 52%;
+  margin-top: 2%;
+  font-size: 1.8rem;
+  margin-left: 25%;
+  background: -webkit-gradient(linear, left top, right top, from(#797474), to(#b7b7b7));
+  background: linear-gradient(to right, #797474, #b7b7b7);
+  border-color: transparent;
+  color: #b51e2e;
+  height: 110px;
+  border-radius: 63px;
+  font-size: 3.0em;
+  font-weight: 700;
+}
+
+page-order-history .headtxt {
+  font-size: 2.5em;
+  color: #fff;
+  padding-top: 14%;
+  text-align: -webkit-center;
+}
+
+page-order-history .hdgrid {
+  width: 75%;
+  margin: 3% 6% 6% 3%;
+  height: 11%;
+  background: -webkit-gradient(linear, left top, right top, from(#8e4e4e), to(#dc3f3f));
+  background: linear-gradient(to right, #8e4e4e, #dc3f3f);
+}
+
+page-order-history .datatxt {
+  font-size: 2.5em;
+  color: #fff;
+  padding-top: 14%;
+  text-align: -webkit-center;
+}
+
+page-order-history .datagrid {
+  margin: 3% 6% 6% 3%;
+  height: 11%;
   background: transparent;
-  margin: 12px;
-  width: 46%;
-  border: 2px solid #fff !important;
-  border-radius: 40px;
-  margin-top: 40%;
-  height: 8%;
-  margin-top: 20%;
-  margin-left: 28%;
 }
 
-page-select-driver .selectcls {
-  color: aliceblue !important;
+page-order-history .divide {
+  width: 4px;
+  height: 120%;
+  background-color: #afa7a7;
 }
 
-page-select-driver .item-input .label-md, page-select-driver .item-select .label-md, page-select-driver .item-datetime .label-md {
-  color: #999;
-  FONT-SIZE: 2EM;
+page-order-history .noOrdr {
+  background: aliceblue;
+  font-size: 4em;
+  text-align: center;
+  margin-top: -5%;
+  width: 100%;
+  padding: 2%;
+  color: black;
+}
+
+page-order-history .f3em {
+  text-align: center;
+  color: #fff;
+  padding: 3%;
+}
+
+page-order-history tr:nth-of-type(odd) {
+  background: #2B4252;
+}
+
+page-order-history .mt80per {
+  margin-top: 80%;
+}
+
+page-reject .contact-input {
+  margin: 2% 9% 7% 5%;
+  font-size: 2em;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  width: 90%;
+  border-radius: 15px;
+}
+
+page-reject .outerBox {
+  width: 40%;
+  height: 26%;
+  background: #bdbdbd;
+  border-radius: 36px;
+  margin: 25% 25% 25% 30%;
+}
+
+page-reject .rsntext {
+  COLOR: #FFF;
+  margin-left: 5%;
+  font-size: 2.5em;
+  padding-top: 4%;
+}
+
+page-reject .loginbtn {
+  margin-top: -2%;
+}
+
+page-select-driver .contact-input {
+  margin: 2% 9% 7% 5%;
+  font-size: 2em;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  width: 90%;
+  border-radius: 15px;
+}
+
+page-select-driver .outerBox {
+  width: 40%;
+  height: 26%;
+  background: #bdbdbd;
+  border-radius: 36px;
+  margin: 25% 25% 25% 30%;
+}
+
+page-select-driver .rsntext {
+  COLOR: #FFF;
+  margin-left: 5%;
+  font-size: 2.5em;
+  padding-top: 4%;
+}
+
+page-select-driver .loginbtn {
+  margin-top: -2%;
 }

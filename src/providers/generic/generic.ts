@@ -55,10 +55,12 @@ export class GenericProvider {
     return new Promise((resolve, reject) => {
       firebase.database().ref('driver_details/').on('value', itemSnapshot => {
         let drivers = [];
+        console.log(itemSnapshot.val());
         itemSnapshot.forEach(itemSnap => {
           if (itemSnap.val().avaialble === "yes") {
             console.log(itemSnap.val().email);
-            drivers.push(itemSnap.val().email);
+           // drivers.push(itemSnap.val().email);
+           drivers.push(itemSnap.val());
           }
           return false;
         });
@@ -69,12 +71,13 @@ export class GenericProvider {
     });
   }
 
-  updateStatus(order_id){
+  updateStatus(order_id,driver){
     let ref = "orders/"+order_id+"/";
     return new Promise((resolve, reject) => {
       firebase.database().ref(ref).on('value', itemSnapshot => {
         firebase.database().ref(ref).update({
-          order_status: "on_the_way"
+          order_status: "on_the_way",
+          driver_info: driver
         });
 
         console.log(itemSnapshot.val());
@@ -83,6 +86,22 @@ export class GenericProvider {
         reject(error);
       });
   })
+}
+sendRejectmsg(order_id,msg){
+  let ref = "orders/"+order_id+"/";
+  return new Promise((resolve, reject) => {
+    firebase.database().ref(ref).on('value', itemSnapshot => {
+      firebase.database().ref(ref).update({
+        'reject_msg' : msg,
+        'order_status': "rejected"
+      })
+
+      console.log(itemSnapshot.val());
+      resolve(true);
+    }, (error) => {
+      reject(error);
+    });
+})
 }
 updateDriver(order_id){
   // let ref = "driverdetails/"+order_id+"/";

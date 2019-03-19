@@ -10,18 +10,20 @@ import { MainPage } from '../pages/main/main'
 import { SelectDriverPage } from '../pages/select-driver/select-driver';
 import { MoreinfoPage } from '../pages/moreinfo/moreinfo';
 import { OrderHistoryPage } from '../pages/order-history/order-history';
+import { RejectPage } from '../pages/reject/reject';
 
 import { StorageProvider } from '../providers/storage/storage';
 import { IonicStorageModule } from '@ionic/Storage';
 import { GenericProvider } from '../providers/generic/generic';
 import firebase from 'firebase';
 import { LocalStorageProvider } from '../providers/local-storage/local-storage'; 
+import { Geolocation } from '@ionic-native/geolocation';
 
 
 @NgModule({
   declarations: [
     MyApp,
-    HomePage,MainPage,SelectDriverPage,MoreinfoPage,OrderHistoryPage
+    HomePage,MainPage,SelectDriverPage,MoreinfoPage,OrderHistoryPage,RejectPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,7 @@ import { LocalStorageProvider } from '../providers/local-storage/local-storage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    HomePage,MainPage,SelectDriverPage,MoreinfoPage,OrderHistoryPage
+    HomePage,MainPage,SelectDriverPage,MoreinfoPage,OrderHistoryPage,RejectPage
   ],
   providers: [
     StatusBar,
@@ -40,7 +42,7 @@ import { LocalStorageProvider } from '../providers/local-storage/local-storage';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     StorageProvider,
     GenericProvider,
-    LocalStorageProvider
+    LocalStorageProvider,Geolocation
   ]
 })
 export class AppModule {}

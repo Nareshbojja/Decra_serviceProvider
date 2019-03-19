@@ -1,6 +1,4 @@
 // http://ionicframework.com/docs/theming/
-
-
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,271 +12,399 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-
-
 .z-depth-4 {
     -webkit-box-shadow: 0 8px 10px 1px rgba(255, 255, 255, 0.14), 0 3px 14px 2px rgba(255, 255, 255, 0.12), 0 5px 5px -3px rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 10px 1px rgba(255, 255, 255, .14), 0 3px 14px 2px rgba(255, 255, 255, 0.12), 0 5px 5px -3px rgba(255, 255, 255, 0.3);
-  }
-  *{
-      font-family:GlobalFont;
-  }
-  .page{
-      background: #132b3e;
-  }
-  .hide{
-      visibility: hidden;
-       
-  }
-  
-  .datepicker{
+    box-shadow: 0 8px 10px 1px rgba(255, 255, 255, .14), 0 3px 14px 2px rgba(255, 255, 255, 0.12), 0 5px 5px -3px rgba(255, 255, 255, 0.3);
+}
+
+* {
+    font-family: GlobalFont;
+}
+
+.page {
+    background: #132b3e;
+}
+
+.hide {
+    visibility: hidden;
+
+}
+
+.datepicker {
     background-color: transparent;
     border-bottom-color: transparent;
 
 }
-  
-  .finish{
-      visibility: hidden;
-      transition: all .5s;
-  
-  
-  }
-  .page1Bg{
+
+.finish {
+    visibility: hidden;
+    transition: all .5s;
+
+
+}
+
+.page1Bg {
     background-image: url('../assets/imgs/page.png');
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: cover;
-  }
-  
-  .inputContainer {
-      display:flex;
-    flex-direction:  column;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.inputContainer {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    align-items:center;
-    width:100%;
-  }
-  
-  .redContainer {
-      display:flex;
-      float:right;
-    flex-direction:  column;
+    align-items: center;
+    width: 100%;
+}
+
+.redContainer {
+    display: flex;
+    float: right;
+    flex-direction: column;
     justify-content: center;
-    align-items:center;
-    width:80%;
+    align-items: center;
+    width: 80%;
     border-radius: 20px 0 0 20px;
-    padding:10px 5px;
-    background: linear-gradient(to right, #aa3642 , #ed1c24);
-  }
-  
-  .input {
+    padding: 10px 5px;
+    background: linear-gradient(to right, #aa3642, #ed1c24);
+}
+
+.input {
     position: relative;
     color: white;
-  }
-  
-  .input {display: inline-block;
-  
-  }
-  
-  .datetime-text{
+}
+
+.input {
+    display: inline-block;
+
+}
+
+.datetime-text {
     position: absolute;
-      top: 50%;
+    top: 50%;
     transform: translateY(-50%);
-  
-  }
-  
-  
-  .data {
-  width:75vw;
-    background: rgba(0,0,0,0);
-    border: 2px solid rgba(255,255,255,.5);
+
+}
+
+
+.data {
+    width: 75vw;
+    background: rgba(0, 0, 0, 0);
+    border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 25px;
-  }
-  .input .dataG {
-  width:80vw;
-    background: rgba(0,0,0,0);
-    border: 2px solid rgba(255,255,255,.5);
+}
+
+.input .dataG {
+    width: 80vw;
+    background: rgba(0, 0, 0, 0);
+    border: 2px solid rgba(255, 255, 255, .5);
     border-radius: 25px;
-  }
-  
-  .input .data { text-indent: 25px;
-  text-align:left;}
-  .input .icon { 
-  
+}
+
+.input .data {
+    text-indent: 25px;
+    text-align: left;
+}
+
+.input .icon {
+
     position: absolute;
-      top: 50%;
+    top: 50%;
     transform: translateY(-50%);
-  }
-  
-  .data .button-inner{
-       justify-content:flex-start;
-  }
-  .input .icon {left: auto; right: 25px;}
-  
-  .selected{
-      border:2px solid rgba(238,28,36,.7)
-  }
-  .grad{
-      background: linear-gradient(to right, #aa3642 , #ed1c24);
-  }
-  .grad:active { background:linear-gradient(to right, rgba(170,54,66,.7) , rgba(238,28,36,.7))}
-  
-  .outline{
-      border: 2px solid rgba(255,255,255,1);
-      background: transparent;
-  }
-  .outline:active{
-      border: 2px solid rgba(255,255,255,.5);
-      color:rgba(255,255,255,.5);
-      background: rgba(255,255,255,.1);
-  }
-  
-  
-  .header{
-    color:rgba(255,255,255,1);
+}
+
+.data .button-inner {
+    justify-content: flex-start;
+}
+
+.input .icon {
+    left: auto;
+    right: 25px;
+}
+
+.selected {
+    border: 2px solid rgba(238, 28, 36, .7)
+}
+
+.grad {
+    background: linear-gradient(to right, #aa3642, #ed1c24);
+}
+
+.grad:active {
+    background: linear-gradient(to right, rgba(170, 54, 66, .7), rgba(238, 28, 36, .7))
+}
+
+.outline {
+    border: 2px solid rgba(255, 255, 255, 1);
+    background: transparent;
+}
+
+.outline:active {
+    border: 2px solid rgba(255, 255, 255, .5);
+    color: rgba(255, 255, 255, .5);
+    background: rgba(255, 255, 255, .1);
+}
+
+
+.header {
+    color: rgba(255, 255, 255, 1);
     font-weight: 300;
     text-transform: uppercase;
     font-size: 1.2em;
-  }
-  .title{
-      font-size:1em;
-      font-weight: 300;
-      color:black;
-      text-transform: uppercase;;
-  }
-  
-  .from{
-      font-size:.8em;
-      color:white;
-      text-transform: uppercase;;
-  }
-  .loading-md .loading-wrapper{
+}
+
+.title {
+    font-size: 1em;
+    font-weight: 300;
+    color: black;
+    text-transform: uppercase;
+    ;
+}
+
+.from {
+    font-size: .8em;
+    color: white;
+    text-transform: uppercase;
+    ;
+}
+
+.loading-md .loading-wrapper {
     color: #fff !important;
-    background-color:#4c4c4c !important;  
-    border-radius:10px 
-  }
-  .loading-md .spinner-crescent circle{
-      stroke: #fff
-  }
-  .loading .loading-wrapper{
+    background-color: #4c4c4c !important;
+    border-radius: 10px
+}
+
+.loading-md .spinner-crescent circle {
+    stroke: #fff
+}
+
+.loading .loading-wrapper {
     color: #fff !important;
-    background-color:#ffe038; 
-  }
-  .price{
-     font-size: 1.6rem;
-      color:white;
-      margin-top:5px;
-      text-transform: uppercase;;
-  }
-  
-  .content{
-      font-size:1em;
-      color:rgb(143,150,158);
-  }
-  
-  .card{
-      background: transparent;
-      z-index:10;
-  
-  }
-  .card:active *{
-      filter:brightness(85%);
-     
-  }
-  .cH{
-      background: rgb(241,241,242);
-      padding:0 10px ;
-      border-radius:10px 10px 0 0;
-  }
-  
-  .cC{
-      background: white;
-      padding:5px 0 10px 0;
-      border-radius: 0 0 10px 10px;
-  }
-  
-  .foot{
-      position:relative;
-      bottom:-4px;
-      left:-2px;
-      height:55px;
-      width:100vw;
-  }
-  
-  .white{
-      color:white;
-  }
-  
-  .fullPage{
-      position:fixed;
-      top:0;
-      left:0;
-      height:100vh;
-      width:100vw;
-  }
-  .animation{
-   transition: all 700ms;
-  }
-  .init{
-      visibility: hidden;
-  }
-  
-  
-  .top{
-      position: absolute;;
-      top:0;
-  
-  }
-  
-  .bottom{
-      z-index: 10000;
-      position: absolute;;
-      bottom:0;
-      left:0;
-      
-     
-      
-  }
-  
-  .centerC{
-      display:flex;
-      flex-direction: column;
-      align-content: center;
-      align-items: center;
-  }
-  .round{
-      border-radius: 2vw;
-  }
-  
-  .loading-wrapper{
-      background: transparent !important;
-      box-shadow: none !important;
-  }
-  .toast-wrapper{
-      opacity:.90 !important;
-  }
-  .toast-message
-  {
-      color:whitesmoke !important;
-  }
-.menuBtn
-{
+    background-color: #ffe038;
+}
+
+.price {
+    font-size: 1.6rem;
+    color: white;
+    margin-top: 5px;
+    text-transform: uppercase;
+    ;
+}
+
+.content {
+    font-size: 1em;
+    color: rgb(143, 150, 158);
+}
+
+.card {
+    background: transparent;
+    z-index: 10;
+
+}
+
+.card:active * {
+    filter: brightness(85%);
+
+}
+
+.cH {
+    background: rgb(241, 241, 242);
+    padding: 0 10px;
+    border-radius: 10px 10px 0 0;
+}
+
+.cC {
+    background: white;
+    padding: 5px 0 10px 0;
+    border-radius: 0 0 10px 10px;
+}
+
+.foot {
+    position: relative;
+    bottom: -4px;
+    left: -2px;
+    height: 55px;
+    width: 100vw;
+}
+
+.white {
+    color: white;
+}
+
+.fullPage {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+}
+
+.animation {
+    transition: all 700ms;
+}
+
+.init {
+    visibility: hidden;
+}
+
+
+.top {
+    position: absolute;
+    ;
+    top: 0;
+
+}
+
+.bottom {
+    z-index: 10000;
+    position: absolute;
+    ;
+    bottom: 0;
+    left: 0;
+
+
+
+}
+
+.centerC {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+.round {
+    border-radius: 2vw;
+}
+
+.loading-wrapper {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.toast-wrapper {
+    opacity: .90 !important;
+}
+
+.toast-message {
+    color: whitesmoke !important;
+}
+
+.menuBtn {
     background-color: transparent;
     font-size: 2em;
     margin: 16px;
     color: #fff;
 }
-.menuItem{
+
+.menuItem {
     background: transparent;
     color: #fff;
     font-size: 2.2rem;
     margin: 10px;
 }
-.userTitle{
+
+.userTitle {
     text-align: center;
     margin: 3rem 2rem;
     font-size: 25px;
     color: #ffe038;
 }
-.item-md.activated{
+
+.item-md.activated {
     background-color: transparent
+}
+
+
+//Arun CSS
+.trbg {
+    height: 200px;
+    background-color: #B03540 !important;
+    background-image: linear-gradient(#B03540, #D5222D) !important;
+}
+
+.p18 {
+    padding: 18px !important;
+}
+
+.p36 {
+    padding: 36px !important;
+}
+
+table > tbody > tr > td {
+    padding: 70px 30px !important;
+    border: 1px solid #2B4252;
+}
+
+.mt10 {
+    margin-top: 10px !important;
+}
+
+.b-r {
+    border-right: 1px solid #ffffff;
+}
+
+.datagrid {
+    margin: 0% !important;
+    padding: 4%;
+}
+.datagrid1 {
+    margin: 0% !important;
+    padding: 12%;
+}
+
+th {
+    text-transform: uppercase;
+}
+
+.table-s {
+    color: #ffffff;
+    font-size: 2.5em;
+    padding: 0px 20px;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+.btn-green {
+    background-color: #46BC68 !important;
+}
+
+.btn-s-g {
+    color: #ffffff;
+    font-size: 1em;
+    padding: 0px 20px;
+    background-color: #46BC68 !important;
+}
+
+.btn-red {
+    background-color: #F0704A !important;
+}
+
+.btn-s-r {
+    color: #ffffff;
+    font-size: 1em;
+    padding: 0px 20px;
+    background-color: #F0704A !important;
+}
+
+.btn-grey {
+    background-color: #ABABAB !important;
+}
+.btn-shadeblue {
+    background-color: #122b40 !important
+}
+.btn-transp {
+    background-color: #2b4253 !important
+}
+
+.btn-s-gy {
+    color: #98394D;
+    font-size: 1em;
+    padding: 0px 20px;
+    background-color: #ABABAB !important;
+}
+
+.f3em {
+    font-size: 3em;
 }

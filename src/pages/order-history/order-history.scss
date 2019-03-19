@@ -1,3 +1,99 @@
 page-order-history {
 
+    .hdrlogo {
+        height: 130px;
+        width: auto;
+    }
+    .datagrid1{
+    padding: 6% 10% 5% 12%;
+    }
+    .p510{
+        padding: 25px 0px 25px 45px;
+    }
+    .mainpageDiv {
+        border-left: 6px solid #fff;
+        font-size: 21px;
+        margin: 1% 0% 1% 2%;
+    }
+    .mainpageText {
+        font-size: 2.2em;
+        color: #fff;
+        margin: 0
+    }
+    .welcomeDiv{
+    float: right;
+    margin-top: -7%;
+    margin-right: 3%;
+    }
+    .welcomeText {
+        font-size: 3em;
+        color: #fff;
+        text-transform: uppercase;
+    }
+    .loginbtn {
+        width: 52%;
+        margin-top: 2%;
+        font-size: 1.8rem;
+        margin-left: 25%;
+        background: -webkit-gradient(linear, left top, right top, from(#32db64), to(#2ec95c));
+        background: linear-gradient(to right, #797474, #b7b7b7);
+        border-color: transparent;
+        color: #b51e2e;
+        height: 110px;
+        border-radius: 63px;
+        font-size: 3.0em;
+        font-weight: 700;
+    }
+    .headtxt {
+        font-size: 2.5em;
+        color: #fff;
+        padding-top: 14%;
+        text-align: -webkit-center;
+    }
+    .hdgrid {
+        width: 75%;
+        margin: 3% 6% 6% 3%;
+        height: 11%;
+        background: linear-gradient(to right, #8e4e4e, #dc3f3f);
+    }
+    .datatxt {
+        font-size: 2.5em;
+        color: #fff;
+        padding-top: 14%;
+        text-align: -webkit-center;
+    }
+    .datagrid {
+        margin: 3% 6% 6% 3%;
+        height: 11%;
+        background: transparent;
+    }
+    .divide {
+        width: 4px;
+        height: 120%;
+        background-color: #afa7a7;
+    } 
+    
+    .noOrdr{
+        background: aliceblue;
+        font-size: 4em;
+        text-align: center;
+        margin-top: -5%;
+        width: 100%;
+        padding: 2%;
+        color: black;
+    }
+    .f3em{
+        text-align: center;
+        color: #fff;
+        padding: 3%;
+    }
+    //    Arun CSS
+    
+    
+    tr:nth-of-type(odd) {
+        background: #2B4252;
+    }
+    .mt80per{
+        margin-top: 80%;
+    }
 }

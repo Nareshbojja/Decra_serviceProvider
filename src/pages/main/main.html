@@ -5,119 +5,148 @@
   Ionic pages and navigation.
 -->
 <ion-content class="page">
-  <ion-row style="margin:5px;">
-    
-  <ion-col width-50 style="margin:2%;">
-    
-  
-  <img class="hdrlogo" src="assets/imgs/Decra_white_clear.png">
-  <div class="mainpageDiv">
-    <h5 class="mainpageText">MAIN PAGE</h5>
-  </div>
-</ion-col>
-<ion-col width-50>
-  
+  <ion-row style="margin:2%; display: flex;">
 
-<div class="welcomeDiv">
-    <h5 class="welcomeText">WELCOME NAResh Bojja</h5>
-  </div>
-</ion-col>
-</ion-row>
-<ion-row>
-  <ion-col width-50>
-    <button (click)="orderHitory()" ion-button class="outline loginbtn" mode="md" color="white" style= "margin-left:40%; " outline round large>
-      Order history
-    </button>
-      </ion-col>
-  <ion-col width-50>
-    <button (click)="Login()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:12%;" outline round large>
-      Extend request
-    </button>
-  </ion-col>
-</ion-row>
-<ion-grid class="hdgrid">
+
+
+
+      <img class="hdrlogo" src="assets/imgs/Decra_white_clear.png">
+      <div class="mainpageDiv">
+          <h5 class="mainpageText p510">MAIN PAGE</h5>
+      </div>
+      <div class="mainpageDiv">
+          <h5 class="mainpageText p510">MAIN PAGE</h5>
+      </div>
+      
+  </ion-row>
+  <div class="welcomeDiv">
+        <h5 class="welcomeText">WELCOME NAResh Bojja</h5>
+    </div>
+
   <ion-row>
-    <ion-col col-1 style="padding:44px;">
-     <div class="headtxt">
-        #
-      </div>
-    </ion-col>
-    <ion-col>
-      <div class="headtxt">
-        CUSTOMER NAME
-      </div>
-    </ion-col>
-    <div class="divide"></div>
-
-    <ion-col>
-      <div class="headtxt">
-        CAR CATEGORY
-      </div>
-    </ion-col>
-    <div class="divide"></div>
-
-    <ion-col>
-      <div class="headtxt">
-        CAR NAME
-      </div>
-    </ion-col>
-    <div class="divide"></div>
-
-    <ion-col>
-      <div class="headtxt">
-        DURATION
-      </div>
-    </ion-col>
+      <ion-col width-50>
+          <button (click)="ordershist()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:40%; " outline round large>
+    Order history
+  </button>
+      </ion-col>
+      <ion-col width-50>
+          <button (click)="Login()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:12%;" outline round large>
+    Extend request
+  </button>
+      </ion-col>
   </ion-row>
-</ion-grid>
-<ion-grid class="datagrid">
-  <ion-row *ngFor= "let order of myOrders">
-    <ion-col col-1 style="padding:44px;">
-     <div class="datatxt" >
-        #
-      </div>
-    </ion-col>
-    <ion-col col-2> 
-      <div class="datatxt" >
-        {{order.name}}
-      </div>
-    </ion-col>
-    <div class="divide"></div>
+  <!-- <button class="btn-s-r" (click)="viewMore(order.order_id);">REJECT</button> -->
 
-    <ion-col col-3> 
-      <div class="datatxt" >
-        {{order.category}}
-      </div>
-    </ion-col>
-    <div class="divide"></div>
 
-    <ion-col col-3> 
-      <div class="datatxt" >
-        {{order.manufacture}}
-      </div>
-    </ion-col>
-    <div class="divide"></div>
+  <!--==========================================================================================================-->
 
-    <ion-col col-2> 
-      <div class="datatxt" >
-        {{order.FromDate}} to {{order.ToDate}}
-      </div>
-    </ion-col>
-    <ion-col col-3> 
-      <div class="datatxt" (click)="selctDriver(order.order_id);">
-        ACCEPT
-      </div>
-    </ion-col>
-    <ion-col col-3> 
-      <div class="datatxt" >
-        REJECT
-      </div>
-    </ion-col>
-    <ion-col col-3> 
-      <div class="datatxt" (click)="viewMore(order.order_id);">
-        MORE INFO
-      </div>
-    </ion-col>
-  </ion-row>
-</ion-grid>
+  <ion-col class="datagrid grid">
+      <!--       remove "mt80per" while placing this table in screen 4-->
+      <h3 class="f3em">NEW ORDERS</h3>
+      <table class="table-s">
+          <thead>
+              <tr class="trbg">
+                  <th class="p36 b-r">#</th>
+                  <th class="p18 b-r">Customer Name</th>
+                  <th class="p18 b-r">Car Category</th>
+                  <th class="p18 b-r">Car Name</th>
+                  <th class="p18">Duration</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr class="mt10"  *ngFor= "let order of myOrders; let i = index;">
+                  <td class="p36 b-r btn-shadeblue" *ngIf="((i+1)%2)">{{i+1}}</td>
+                  <td class="p36 b-r btn-transp" *ngIf="!((i+1)%2)">{{i+1}}</td>
+
+                  <td class="b-r">{{order.name}}</td>
+                  <td class="b-r">{{order.category}}</td>
+                  <td class="b-r">{{order.manufacture}}</td>
+                  <td class="b-r"> {{order.FromDate}} to {{order.ToDate}}</td>
+                  <td class="btn-green b-r" (click)="selctDriver(order.order_id);">
+                      <ion-col ><button class="btn-s-g" >ACCEPT</button></ion-col>
+                  </td>
+                  <td class="btn-red b-r" (click)="reject(order.order_id);">
+                      <ion-col >
+                          <button class="btn-s-r" >REJECT</button>
+                      </ion-col>
+                  </td>
+                  <td class="btn-grey" (click)="viewMore()" (click)="viewMore(order.order_id);"> 
+                      <ion-col><button class="btn-s-gy" >MORE INFO</button></ion-col>
+                  </td>
+
+              </tr>
+
+              <!----------------------------- iiiiiiii   -->
+              <!-- <tr>
+                  <td class="p36 b-r">2</td>
+                  <td class="b-r">James</td>
+                  <td class="b-r">Minibus</td>
+                  <td class="b-r">Chevrolet Orlando</td>
+                  <td class="b-r">2019-3-2 to 2019-0"3-03</td>
+                  <td class="btn-green b-r" (click)="myyynext()"> 
+                      <ion-col><button class="btn-s-g">ACCEPT</button></ion-col>
+                  </td>
+                  <td class="btn-red b-r">
+                      <ion-col><button class="btn-s-r">REJECT</button></ion-col>
+                  </td>
+                  <td class="btn-grey">
+                      <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>
+                  </td>
+              </tr>
+              <tr>
+                  <td class="p36 b-r">3</td>
+                  <td class="b-r">Arun Kumar</td>
+                  <td class="b-r">Roadster</td>
+                  <td class="b-r">BMW Z4</td>
+                  <td class="b-r">2019-3-2 to 2019-03-03</td>
+                  <td class="btn-green b-r">
+                      <ion-col><button class="btn-s-g">ACCEPT</button></ion-col>
+                  </td>
+                  <td class="btn-red b-r">
+                      <ion-col><button class="btn-s-r">REJECT</button></ion-col>
+                  </td>
+                  <td class="btn-grey">
+                      <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>
+                  </td>
+              </tr>
+              <tr>
+                  <td class="p36 b-r">4</td>
+                  <td class="b-r">Santosh</td>
+                  <td class="b-r">Supermini</td>
+                  <td class="b-r">Volkswagen Polo</td>
+                  <td class="b-r">2019-3-2 to 2019-03-03</td>
+                  <td class="btn-green b-r">
+                      <ion-col><button class="btn-s-g">ACCEPT</button></ion-col>
+                  </td>
+                  <td class="btn-red b-r">
+                      <ion-col><button class="btn-s-r">REJECT</button></ion-col>
+                  </td>
+                  <td class="btn-grey">
+                      <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>
+                  </td>
+              </tr>
+              <tr>
+                  <td class="p36 b-r">5</td>
+                  <td class="b-r">Sai Kiran</td>
+                  <td class="b-r">Bubble car</td>
+                  <td class="b-r">Renault Twizy</td>
+                  <td class="b-r">2019-3-2 to 2019-03-03</td>
+                  <td class="btn-green b-r">
+                      <ion-col><button class="btn-s-g">ACCEPT</button></ion-col>
+                  </td>
+                  <td class="btn-red b-r">
+                      <ion-col><button class="btn-s-r">REJECT</button></ion-col>
+                  </td>
+                  <td class="btn-grey">
+                      <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>
+                  </td>
+              </tr>  -->
+          </tbody>
+      </table>
+  </ion-col>
+  
+   <!--==========================================================================================================-->
+
+ 
+  
 </ion-content>

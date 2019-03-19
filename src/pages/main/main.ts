@@ -6,6 +6,7 @@ import firebase from 'firebase/app';
 import { SelectDriverPage } from '../select-driver/select-driver';
 import { MoreinfoPage } from '../moreinfo/moreinfo';
 import { OrderHistoryPage } from '../order-history/order-history';
+import { RejectPage } from '../reject/reject';
 
 /**
  * Generated class for the MainPage page.
@@ -34,7 +35,9 @@ export class MainPage {
     // let resEmail  = JSON.stringify(myDetails.email);
 
   }
-
+  myyynext(){
+    alert('ye8888ss');
+  }
   getMYOrders(myEmail){
     this.genericPro.showLoader();
     firebase.database().ref('orders/').on('value', itemSnapshot => {
@@ -48,7 +51,7 @@ export class MainPage {
 
         return false;
       });
-      if(this.myOrders ! == null){
+      if(this.myOrders !== "" || this.myOrders !== null){
         this.myOrders = orders;
       }
       else{
@@ -59,11 +62,17 @@ export class MainPage {
 
   })
 }
+reject(ordr_id){
+this.navCtrl.push(RejectPage,{
+  'ordr' : ordr_id
+});
+}
 selctDriver(o_id){
     console.log(o_id);
-  this.genericPro.updateStatus(o_id);
   //send status update as notification to the user 
-  this.navCtrl.push(SelectDriverPage);
+  this.navCtrl.push(SelectDriverPage,{
+    'ordr' : o_id
+  });
 }
 viewMore(order_id){
   let viewOrd:any;
@@ -79,7 +88,7 @@ viewMore(order_id){
     vOrder : viewOrd
   });
 }
-orderHitory(){
+ordershist(){
   this.navCtrl.push(OrderHistoryPage);
 }
   ionViewDidLoad() {

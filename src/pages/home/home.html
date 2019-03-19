@@ -1,11 +1,13 @@
 
 <ion-content class="page">
-  <img class="hdrlogo" src="assets/imgs/Decra_white_clear.png">
+  <div class="hdrlogo">
+  <img  src="assets/imgs/Decra_white_clear.png">
+</div>
   <h5 class="loginTxt">SERVICE PROVIDER</h5>
 
-  <div style="margin: 18%;">
+  <div style="margin: 8% 30% 3% 28%;">
     <h5 class="lbltxt">COMPANY NAME</h5>
-
+<ion-list>
     <ion-item class="inputlogin">
       <ion-input type="text" placeholder="Username"  [(ngModel)]="sdata.email" class="inputcls"></ion-input>
     </ion-item>
@@ -27,7 +29,7 @@
     <button (click)="Login()" ion-button class="outline loginbtn" mode="md" color="white" outline round large>
       Login
     </button>
-
+  </ion-list>
   </div>
 
 </ion-content>
