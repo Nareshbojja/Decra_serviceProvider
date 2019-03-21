@@ -134,20 +134,19 @@
              <tr class="trbg">
                  <th class="p36 b-r">#</th>
                  <th class="p18 b-r">Customer Name</th>
-                 <th class="p18 b-r">Car Category</th>
-                 <th class="p18 b-r">Car Name</th>
-                 <th class="p18">Duration</th>
+                 <th class="p18 b-r">Driver</th>
+                 <th class="p18 b-r">Car</th>
+                 <th class="p18">Status</th>
              </tr>
          </thead>
-         <tbody>
 
             <tr class="mt10"  *ngFor= "let order of myOrders; let i = index;">
                    <td class="p36 b-r btn-shadeblue" *ngIf="((i+1)%2)">{{i+1}}</td>
                   <td class="p36 b-r btn-transp" *ngIf="!((i+1)%2)">{{i+1}}</td>
                 <td class="b-r">{{order.name}}</td>
-                <td class="b-r">{{order.name}}</td>
-                <td class="b-r">{{order.name}}</td>
-                <td class="b-r">{{order.name}}to {{order.name}}</td>
+                <td class="b-r" > Driver2</td>
+                <td class="b-r">{{order.manufacture}}</td>
+                <td class="b-r">{{order.order_status}}</td>
                 <td class="btn-grey" (click)="next()">
                     <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>
                 </td>

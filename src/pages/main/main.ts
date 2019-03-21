@@ -46,7 +46,16 @@ export class MainPage {
       itemSnapshot.forEach(itemSnap => {
         if (myEmail == itemSnap.val().provider_email) {
          console.log(itemSnap.val().provider_email);
+        //   let fromD = itemSnap.val().FromDate;
+        //   let toD = itemSnap.val().ToDate;
+  
+        //  let   dt1 = new Date(fromD);
+        //   let  dt2 = new Date(toD);
+        //   let dif = Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
+        //     console.log(dif);
+        //   itemSnap.val()['diff'] = dif;
           orders.push(itemSnap.val());
+          //orders['difference'] = dif;
         }
 
         return false;
@@ -74,19 +83,27 @@ selctDriver(o_id){
     'ordr' : o_id
   });
 }
-viewMore(order_id){
-  let viewOrd:any;
-  console.log(order_id);
-  this.myOrders.forEach(ord => {
-    console.log(ord);
-    if(order_id == ord.order_id){
-      viewOrd = ord;
+viewMore(or_id){
+  // let viewOrd:any;
+  // console.log(order_id);
+  // this.myOrders.forEach(ord => {
+  //   console.log(ord);
+  //   if(order_id == ord.order_id){
+  //     viewOrd = ord;
+  //   }
+  // });
+  if(or_id){
+    let viewOrd:any;
+    for (var i=0; i < this.myOrders.length; i++) {
+      if (this.myOrders[i].order_id === or_id) {
+        console.log(this.myOrders[i]);
+        viewOrd = this.myOrders[i];
+      }
     }
-  });
-
   this.navCtrl.push(MoreinfoPage,{
-    vOrder : viewOrd
+    'vOrder' : viewOrd
   });
+}
 }
 ordershist(){
   this.navCtrl.push(OrderHistoryPage);

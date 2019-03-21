@@ -30,7 +30,8 @@ export class OrderHistoryPage {
     
     })
   }
-  getMYOrders(myEmail){
+ 
+  getMYOrders(myEmail){ 
     this.genericPro.showLoader();
     firebase.database().ref('orders/').on('value', itemSnapshot => {
       let orders = [];
@@ -85,11 +86,12 @@ export class OrderHistoryPage {
        console.log(checkorder);
        this.noOrders= false;
      }
-     else{
-       this.noOrders = true;
-     }
+    
    }
    this.myOrders = checkorder;
+   if(this.myOrders.length <= 0){
+    this.noOrders = true;
+  }
    return this.myOrders;
 }
 }

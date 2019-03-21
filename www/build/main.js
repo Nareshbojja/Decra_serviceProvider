@@ -1,106 +1,15 @@
 webpackJsonp([5],{
 
-/***/ 113:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_main__ = __webpack_require__(81);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-
-var HomePage = (function () {
-    function HomePage(navCtrl, genericPro, localStorage) {
-        this.navCtrl = navCtrl;
-        this.genericPro = genericPro;
-        this.localStorage = localStorage;
-        this.sdata = {
-            "email": "service@gmail.com", "password": "123123"
-        };
-    }
-    HomePage.prototype.Login = function () {
-        var _this = this;
-        if (this.sdata.email === undefined || this.sdata.email === "") {
-            this.genericPro.presentToast('Please enter your email ID');
-        }
-        else if (this.sdata.password === undefined || this.sdata.password === "") {
-            this.genericPro.presentToast('Please enter your password');
-        }
-        else {
-            this.genericPro.showLoader();
-            __WEBPACK_IMPORTED_MODULE_4_firebase___default.a.auth().signInWithEmailAndPassword(this.sdata.email, this.sdata.password).then(function (res) {
-                if (res) {
-                    var resEmail;
-                    console.log(res);
-                    resEmail = res.email;
-                    var de = __WEBPACK_IMPORTED_MODULE_4_firebase___default.a.auth().currentUser.uid;
-                    //console.log(de);
-                    _this.genericPro.getCurrentUserDetails(de).then(function (result) {
-                        console.log(result);
-                        // this.storagePro.remove("user_data");  
-                        _this.loginData = result;
-                        _this.genericPro.hideLoader();
-                        if (_this.loginData == null) {
-                            _this.genericPro.presentToast("Sorry, user not found");
-                        }
-                        else {
-                            _this.localStorage.setData("service_provier_details", _this.loginData);
-                            //this.events.publish('loggedin');
-                            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__main_main__["a" /* MainPage */]);
-                        }
-                    });
-                }
-                else {
-                    alert("Err");
-                    _this.genericPro.presentToast("Login failed");
-                }
-            }).catch(function (err) {
-                _this.genericPro.hideLoader();
-                _this.genericPro.presentToast(err);
-            });
-        }
-    };
-    HomePage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/Users/bojjanaresh/Documents/GitHub/Decra_serviceProvider/src/pages/home/home.html"*/'\n<ion-content class="page">\n  <div class="hdrlogo">\n  <img  src="assets/imgs/Decra_white_clear.png">\n</div>\n  <h5 class="loginTxt">SERVICE PROVIDER</h5>\n\n  <div style="margin: 8% 30% 3% 28%;">\n    <h5 class="lbltxt">COMPANY NAME</h5>\n<ion-list>\n    <ion-item class="inputlogin">\n      <ion-input type="text" placeholder="Username"  [(ngModel)]="sdata.email" class="inputcls"></ion-input>\n    </ion-item>\n    <h5 class="lbltxt" style="margin-top:5%;">COMPANY PASSWORD</h5>\n    <ion-item class="inputlogin">\n      <ion-input type="text" name="password" class="inputcls"  [(ngModel)]="sdata.password" placeholder="Password" ngModel #password="ngModel"\n        required pattern=".{4,10}"></ion-input>\n\n      <!-- <button *ngIf="!showPass" ion-button clear color="dark" class="eyecls" type="button" item-right (click)="showPassword()">\n        <ion-icon name="ios-eye-off-outline"></ion-icon>\n      </button>\n      <button *ngIf="showPass" ion-button clear color="dark" class="eyecls" type="button" item-right (click)="showPassword()">\n        <ion-icon name="ios-eye-outline"></ion-icon>\n      </button> -->\n\n    </ion-item>\n  \n\n    <button (click)="Login()" ion-button class="outline loginbtn" mode="md" color="white" outline round large>\n      Login\n    </button>\n  </ion-list>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/bojjanaresh/Documents/GitHub/Decra_serviceProvider/src/pages/home/home.html"*/
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__["a" /* GenericProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__["a" /* LocalStorageProvider */]])
-    ], HomePage);
-    return HomePage;
-}());
-
-//# sourceMappingURL=home.js.map
-
-/***/ }),
-
-/***/ 147:
+/***/ 146:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SelectDriverPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(113);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__main_main__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -127,19 +36,20 @@ var SelectDriverPage = (function () {
         this.navParams = navParams;
         this.genericPro = genericPro;
         this.localStorage = localStorage;
+        this.order_id = navParams.get('ordr');
+        console.log(this.order_id);
     }
     SelectDriverPage.prototype.ionViewDidLoad = function () {
         var _this = this;
         this.genericPro.getDriverEmails().then(function (driver) {
             _this.drivers = driver;
+            console.log(_this.drivers);
+            _this.driver_emails = _this.drivers.map(function (a) { return a.email; });
+            console.log(_this.driver_emails);
+            if (_this.driver_emails <= 0) {
+                _this.genericPro.presentToast('Currently all the drivers are busy');
+            }
         });
-        if (this.drivers) {
-            this.drivers.forEach(function (man) {
-                _this.driver_emails.push(man.email);
-                console.log(_this.driver_emails.length);
-                console.log("driver" + _this.driver_emails);
-            });
-        }
         console.log('ionViewDidLoad SelectDriverPage');
     };
     SelectDriverPage.prototype.seldriver = function () {
@@ -149,8 +59,17 @@ var SelectDriverPage = (function () {
     SelectDriverPage.prototype.done = function () {
         var _this = this;
         if (this.sel_mail) {
+            for (var i = 0; i < this.drivers.length; i++) {
+                if (this.drivers[i].email === this.sel_mail) {
+                    console.log(this.drivers[i]);
+                    this.sel_driver = this.drivers[i];
+                    delete this.sel_driver.password;
+                    delete this.sel_driver.avaialble;
+                }
+            }
+            this.genericPro.updateStatus(this.order_id, this.sel_driver);
             this.genericPro.updateDriver(this.sel_mail).then(function () {
-                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */]);
+                _this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_4__main_main__["a" /* MainPage */]);
             });
         }
         else {
@@ -170,14 +89,14 @@ var SelectDriverPage = (function () {
 
 /***/ }),
 
-/***/ 148:
+/***/ 147:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MoreinfoPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_interval__ = __webpack_require__(416);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_interval__ = __webpack_require__(355);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_interval___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_add_observable_interval__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -324,16 +243,16 @@ var MoreinfoPage = (function () {
 
 /***/ }),
 
-/***/ 149:
+/***/ 148:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderHistoryPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase_app__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase_app__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase_app__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -422,16 +341,16 @@ var OrderHistoryPage = (function () {
                 console.log(checkorder);
                 this.noOrders = false;
             }
-            else {
-                this.noOrders = true;
-            }
         }
         this.myOrders = checkorder;
+        if (this.myOrders.length <= 0) {
+            this.noOrders = true;
+        }
         return this.myOrders;
     };
     OrderHistoryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-order-history',template:/*ion-inline-start:"/Users/bojjanaresh/Documents/GitHub/Decra_serviceProvider/src/pages/order-history/order-history.html"*/'<ion-content class="page">\n  <ion-row style="margin:2%; display: flex;">\n\n\n\n\n      <img class="hdrlogo" src="assets/imgs/Decra_white_clear.png">\n      <div class="mainpageDiv">\n          <h5 class="mainpageText p510">MAIN PAGE</h5>\n      </div>\n      <div class="mainpageDiv">\n          <h5 class="mainpageText p510">MAIN PAGE</h5>\n      </div>\n      \n  </ion-row>\n  <div class="welcomeDiv">\n        <h5 class="welcomeText">WELCOME NAResh Bojja</h5>\n    </div>\n    <h3 class="f3em">SHOW ONLY</h3>\n\n  <ion-row>\n      <ion-col width-50>\n          <button (click)="accepted()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:40%; " outline round large>\n    ACCEPTED ORDERS\n  </button>\n      </ion-col>\n      <ion-col width-50>\n          <button (click)="timeup()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:12%;" outline round large>\n    TIME IS UP ORDERS\n  </button>\n      </ion-col>\n  </ion-row>\n<ion-row>\n  <ion-col width-50>\n    <button (click)="rejected()" ion-button class="outline loginbtn" mode="md" color="white" style= "margin-left:40%; " outline round large>\n      REJECTED OFFERS\n    </button>\n      </ion-col>\n  <ion-col width-50>\n    <button (click)="finished()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:12%;" outline round large>\n      FINISHED ORDERS\n    </button>\n  </ion-col>\n</ion-row>\n<!-- <ion-grid class="hdgrid">\n  <ion-row>\n    <ion-col col-1 style="padding:44px;">\n     <div class="headtxt">\n        #\n      </div>\n    </ion-col>\n    <ion-col>\n      <div class="headtxt">\n        CUSTOMER NAME\n      </div>\n    </ion-col>\n    <div class="divide"></div>\n\n    <ion-col>\n      <div class="headtxt">\n        CAR CATEGORY\n      </div>\n    </ion-col>\n    <div class="divide"></div>\n\n    <ion-col>\n      <div class="headtxt">\n        CAR NAME\n      </div>\n    </ion-col>\n    <div class="divide"></div>\n\n    <ion-col>\n      <div class="headtxt">\n        DURATION\n      </div>\n    </ion-col>\n  </ion-row>\n</ion-grid> -->\n<!-- <ion-grid class="datagrid">\n  <ion-row *ngFor= "let order of myOrders">\n    <ion-col col-1 style="padding:44px;">\n     <div class="datatxt" >\n        #\n      </div>\n    </ion-col>\n    <ion-col col-2> \n      <div class="datatxt" >\n        {{order.name}}\n      </div>\n    </ion-col>\n    <div class="divide"></div>\n\n    <ion-col col-3> \n      <div class="datatxt" >\n        {{order.category}}\n      </div>\n    </ion-col>\n    <div class="divide"></div>\n\n    <ion-col col-3> \n      <div class="datatxt" >\n        {{order.manufacture}}\n      </div>\n    </ion-col>\n    <div class="divide"></div>\n\n    <ion-col col-2> \n      <div class="datatxt" >\n        {{order.FromDate}} to {{order.ToDate}}\n      </div>\n    </ion-col>\n    <ion-col col-3> \n      <div class="datatxt" (click)="selctDriver(order.order_id);">\n        ACCEPT\n      </div>\n    </ion-col>\n    <ion-col col-3> \n      <div class="datatxt" >\n        REJECT\n      </div>\n    </ion-col>\n    <ion-col col-3  (click)="next()"> \n      <div class="datatxt" (click)="viewMore(order.order_id);">\n        MORE INFO\n      </div>\n    </ion-col>\n  </ion-row>\n</ion-grid> -->\n<ion-col class="datagrid1 grid">\n    <!--       remove "mt80per" while placing this table in screen 4-->\n     <table class="table-s">\n         <thead>\n             <tr class="trbg">\n                 <th class="p36 b-r">#</th>\n                 <th class="p18 b-r">Customer Name</th>\n                 <th class="p18 b-r">Car Category</th>\n                 <th class="p18 b-r">Car Name</th>\n                 <th class="p18">Duration</th>\n             </tr>\n         </thead>\n         <tbody>\n\n            <tr class="mt10"  *ngFor= "let order of myOrders; let i = index;">\n                   <td class="p36 b-r btn-shadeblue" *ngIf="((i+1)%2)">{{i+1}}</td>\n                  <td class="p36 b-r btn-transp" *ngIf="!((i+1)%2)">{{i+1}}</td>\n                <td class="b-r">{{order.name}}</td>\n                <td class="b-r">{{order.name}}</td>\n                <td class="b-r">{{order.name}}</td>\n                <td class="b-r">{{order.name}}to {{order.name}}</td>\n                <td class="btn-grey" (click)="next()">\n                    <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                </td>\n\n            </tr>\n           \n             <!-- <tr class="mt10">\n                 <td class="p36 b-r btn-grey">1</td>\n                 <td class="b-r">Bojja</td>\n                 <td class="b-r">Sports</td>\n                 <td class="b-r">Ferrari</td>\n                 <td class="b-r">2019-3-2 to 2019-03-03</td>\n                 <td class="btn-grey" (click)="next()">\n                     <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                 </td>\n\n             </tr>\n             <tr>\n                 <td class="p36 b-r">2</td>\n                 <td class="b-r">James</td>\n                 <td class="b-r">Minibus</td>\n                 <td class="b-r">Chevrolet Orlando</td>\n                 <td class="b-r">2019-3-2 to 2019-03-03</td>\n                 <td class="btn-grey">\n                     <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                 </td>\n             </tr>\n             <tr>\n                 <td class="p36 b-r">3</td>\n                 <td class="b-r">Arun Kumar</td>\n                 <td class="b-r">Roadster</td>\n                 <td class="b-r">BMW Z4</td>\n                 <td class="b-r">2019-3-2 to 2019-03-03</td>\n                 <td class="btn-grey">\n                     <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                 </td>\n             </tr>\n             <tr>\n                 <td class="p36 b-r">4</td>\n                 <td class="b-r">Santosh</td>\n                 <td class="b-r">Supermini</td>\n                 <td class="b-r">Volkswagen Polo</td>\n                 <td class="b-r">2019-3-2 to 2019-03-03</td>\n                 <td class="btn-grey">\n                     <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                 </td>\n             </tr>\n             <tr>\n                 <td class="p36 b-r">5</td>\n                 <td class="b-r">Sai Kiran</td>\n                 <td class="b-r">Bubble car</td>\n                 <td class="b-r">Renault Twizy</td>\n                 <td class="b-r">2019-3-2 to 2019-03-03</td>\n                 <td class="btn-grey">\n                     <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                 </td>\n             </tr> -->\n         </tbody>\n     </table>\n     <div class="noOrdr" *ngIf="noOrders">\n        NO ORDERS\n     </div>\n </ion-col>\n</ion-content>\n'/*ion-inline-end:"/Users/bojjanaresh/Documents/GitHub/Decra_serviceProvider/src/pages/order-history/order-history.html"*/,
+            selector: 'page-order-history',template:/*ion-inline-start:"/Users/bojjanaresh/Documents/GitHub/Decra_serviceProvider/src/pages/order-history/order-history.html"*/'<ion-content class="page">\n  <ion-row style="margin:2%; display: flex;">\n\n\n\n\n      <img class="hdrlogo" src="assets/imgs/Decra_white_clear.png">\n      <div class="mainpageDiv">\n          <h5 class="mainpageText p510">MAIN PAGE</h5>\n      </div>\n      <div class="mainpageDiv">\n          <h5 class="mainpageText p510">MAIN PAGE</h5>\n      </div>\n      \n  </ion-row>\n  <div class="welcomeDiv">\n        <h5 class="welcomeText">WELCOME NAResh Bojja</h5>\n    </div>\n    <h3 class="f3em">SHOW ONLY</h3>\n\n  <ion-row>\n      <ion-col width-50>\n          <button (click)="accepted()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:40%; " outline round large>\n    ACCEPTED ORDERS\n  </button>\n      </ion-col>\n      <ion-col width-50>\n          <button (click)="timeup()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:12%;" outline round large>\n    TIME IS UP ORDERS\n  </button>\n      </ion-col>\n  </ion-row>\n<ion-row>\n  <ion-col width-50>\n    <button (click)="rejected()" ion-button class="outline loginbtn" mode="md" color="white" style= "margin-left:40%; " outline round large>\n      REJECTED OFFERS\n    </button>\n      </ion-col>\n  <ion-col width-50>\n    <button (click)="finished()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:12%;" outline round large>\n      FINISHED ORDERS\n    </button>\n  </ion-col>\n</ion-row>\n<!-- <ion-grid class="hdgrid">\n  <ion-row>\n    <ion-col col-1 style="padding:44px;">\n     <div class="headtxt">\n        #\n      </div>\n    </ion-col>\n    <ion-col>\n      <div class="headtxt">\n        CUSTOMER NAME\n      </div>\n    </ion-col>\n    <div class="divide"></div>\n\n    <ion-col>\n      <div class="headtxt">\n        CAR CATEGORY\n      </div>\n    </ion-col>\n    <div class="divide"></div>\n\n    <ion-col>\n      <div class="headtxt">\n        CAR NAME\n      </div>\n    </ion-col>\n    <div class="divide"></div>\n\n    <ion-col>\n      <div class="headtxt">\n        DURATION\n      </div>\n    </ion-col>\n  </ion-row>\n</ion-grid> -->\n<!-- <ion-grid class="datagrid">\n  <ion-row *ngFor= "let order of myOrders">\n    <ion-col col-1 style="padding:44px;">\n     <div class="datatxt" >\n        #\n      </div>\n    </ion-col>\n    <ion-col col-2> \n      <div class="datatxt" >\n        {{order.name}}\n      </div>\n    </ion-col>\n    <div class="divide"></div>\n\n    <ion-col col-3> \n      <div class="datatxt" >\n        {{order.category}}\n      </div>\n    </ion-col>\n    <div class="divide"></div>\n\n    <ion-col col-3> \n      <div class="datatxt" >\n        {{order.manufacture}}\n      </div>\n    </ion-col>\n    <div class="divide"></div>\n\n    <ion-col col-2> \n      <div class="datatxt" >\n        {{order.FromDate}} to {{order.ToDate}}\n      </div>\n    </ion-col>\n    <ion-col col-3> \n      <div class="datatxt" (click)="selctDriver(order.order_id);">\n        ACCEPT\n      </div>\n    </ion-col>\n    <ion-col col-3> \n      <div class="datatxt" >\n        REJECT\n      </div>\n    </ion-col>\n    <ion-col col-3  (click)="next()"> \n      <div class="datatxt" (click)="viewMore(order.order_id);">\n        MORE INFO\n      </div>\n    </ion-col>\n  </ion-row>\n</ion-grid> -->\n<ion-col class="datagrid1 grid">\n    <!--       remove "mt80per" while placing this table in screen 4-->\n     <table class="table-s">\n         <thead>\n             <tr class="trbg">\n                 <th class="p36 b-r">#</th>\n                 <th class="p18 b-r">Customer Name</th>\n                 <th class="p18 b-r">Driver</th>\n                 <th class="p18 b-r">Car</th>\n                 <th class="p18">Status</th>\n             </tr>\n         </thead>\n\n            <tr class="mt10"  *ngFor= "let order of myOrders; let i = index;">\n                   <td class="p36 b-r btn-shadeblue" *ngIf="((i+1)%2)">{{i+1}}</td>\n                  <td class="p36 b-r btn-transp" *ngIf="!((i+1)%2)">{{i+1}}</td>\n                <td class="b-r">{{order.name}}</td>\n                <td class="b-r" > Driver2</td>\n                <td class="b-r">{{order.manufacture}}</td>\n                <td class="b-r">{{order.order_status}}</td>\n                <td class="btn-grey" (click)="next()">\n                    <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                </td>\n\n            </tr>\n           \n             <!-- <tr class="mt10">\n                 <td class="p36 b-r btn-grey">1</td>\n                 <td class="b-r">Bojja</td>\n                 <td class="b-r">Sports</td>\n                 <td class="b-r">Ferrari</td>\n                 <td class="b-r">2019-3-2 to 2019-03-03</td>\n                 <td class="btn-grey" (click)="next()">\n                     <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                 </td>\n\n             </tr>\n             <tr>\n                 <td class="p36 b-r">2</td>\n                 <td class="b-r">James</td>\n                 <td class="b-r">Minibus</td>\n                 <td class="b-r">Chevrolet Orlando</td>\n                 <td class="b-r">2019-3-2 to 2019-03-03</td>\n                 <td class="btn-grey">\n                     <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                 </td>\n             </tr>\n             <tr>\n                 <td class="p36 b-r">3</td>\n                 <td class="b-r">Arun Kumar</td>\n                 <td class="b-r">Roadster</td>\n                 <td class="b-r">BMW Z4</td>\n                 <td class="b-r">2019-3-2 to 2019-03-03</td>\n                 <td class="btn-grey">\n                     <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                 </td>\n             </tr>\n             <tr>\n                 <td class="p36 b-r">4</td>\n                 <td class="b-r">Santosh</td>\n                 <td class="b-r">Supermini</td>\n                 <td class="b-r">Volkswagen Polo</td>\n                 <td class="b-r">2019-3-2 to 2019-03-03</td>\n                 <td class="btn-grey">\n                     <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                 </td>\n             </tr>\n             <tr>\n                 <td class="p36 b-r">5</td>\n                 <td class="b-r">Sai Kiran</td>\n                 <td class="b-r">Bubble car</td>\n                 <td class="b-r">Renault Twizy</td>\n                 <td class="b-r">2019-3-2 to 2019-03-03</td>\n                 <td class="btn-grey">\n                     <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                 </td>\n             </tr> -->\n         </tbody>\n     </table>\n     <div class="noOrdr" *ngIf="noOrders">\n        NO ORDERS\n     </div>\n </ion-col>\n</ion-content>\n'/*ion-inline-end:"/Users/bojjanaresh/Documents/GitHub/Decra_serviceProvider/src/pages/order-history/order-history.html"*/,
         }),
         __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__["a" /* GenericProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__["a" /* GenericProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__["a" /* LocalStorageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__["a" /* LocalStorageProvider */]) === "function" && _d || Object])
     ], OrderHistoryPage);
@@ -443,14 +362,14 @@ var OrderHistoryPage = (function () {
 
 /***/ }),
 
-/***/ 150:
+/***/ 149:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RejectPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__ = __webpack_require__(55);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__ = __webpack_require__(46);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -497,7 +416,7 @@ var RejectPage = (function () {
 
 /***/ }),
 
-/***/ 159:
+/***/ 158:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -510,11 +429,11 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 159;
+webpackEmptyAsyncContext.id = 158;
 
 /***/ }),
 
-/***/ 200:
+/***/ 199:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -550,8 +469,99 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 200;
+webpackAsyncContext.id = 199;
 module.exports = webpackAsyncContext;
+
+/***/ }),
+
+/***/ 282:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__main_main__ = __webpack_require__(61);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var HomePage = (function () {
+    function HomePage(navCtrl, genericPro, localStorage) {
+        this.navCtrl = navCtrl;
+        this.genericPro = genericPro;
+        this.localStorage = localStorage;
+        this.sdata = {
+            "email": "service@gmail.com", "password": "123123"
+        };
+    }
+    HomePage.prototype.Login = function () {
+        var _this = this;
+        if (this.sdata.email === undefined || this.sdata.email === "") {
+            this.genericPro.presentToast('Please enter your email ID');
+        }
+        else if (this.sdata.password === undefined || this.sdata.password === "") {
+            this.genericPro.presentToast('Please enter your password');
+        }
+        else {
+            this.genericPro.showLoader();
+            __WEBPACK_IMPORTED_MODULE_4_firebase___default.a.auth().signInWithEmailAndPassword(this.sdata.email, this.sdata.password).then(function (res) {
+                if (res) {
+                    var resEmail;
+                    console.log(res);
+                    resEmail = res.email;
+                    var de = __WEBPACK_IMPORTED_MODULE_4_firebase___default.a.auth().currentUser.uid;
+                    //console.log(de);
+                    _this.genericPro.getCurrentUserDetails(de).then(function (result) {
+                        console.log(result);
+                        // this.storagePro.remove("user_data");  
+                        _this.loginData = result;
+                        _this.genericPro.hideLoader();
+                        if (_this.loginData == null) {
+                            _this.genericPro.presentToast("Sorry, user not found");
+                        }
+                        else {
+                            _this.localStorage.setData("service_provier_details", _this.loginData);
+                            //this.events.publish('loggedin');
+                            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_5__main_main__["a" /* MainPage */]);
+                        }
+                    });
+                }
+                else {
+                    alert("Err");
+                    _this.genericPro.presentToast("Login failed");
+                }
+            }).catch(function (err) {
+                _this.genericPro.hideLoader();
+                _this.genericPro.presentToast(err);
+            });
+        }
+    };
+    HomePage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-home',template:/*ion-inline-start:"/Users/bojjanaresh/Documents/GitHub/Decra_serviceProvider/src/pages/home/home.html"*/'\n<ion-content class="page">\n  <div class="hdrlogo">\n  <img  src="assets/imgs/Decra_white_clear.png">\n</div>\n  <h5 class="loginTxt">SERVICE PROVIDER</h5>\n\n  <div style="margin: 8% 30% 3% 28%;">\n    <h5 class="lbltxt">COMPANY NAME</h5>\n<ion-list>\n    <ion-item class="inputlogin">\n      <ion-input type="text" placeholder="Username"  [(ngModel)]="sdata.email" class="inputcls"></ion-input>\n    </ion-item>\n    <h5 class="lbltxt" style="margin-top:5%;">COMPANY PASSWORD</h5>\n    <ion-item class="inputlogin">\n      <ion-input type="text" name="password" class="inputcls"  [(ngModel)]="sdata.password" placeholder="Password" ngModel #password="ngModel"\n        required pattern=".{4,10}"></ion-input>\n\n      <!-- <button *ngIf="!showPass" ion-button clear color="dark" class="eyecls" type="button" item-right (click)="showPassword()">\n        <ion-icon name="ios-eye-off-outline"></ion-icon>\n      </button>\n      <button *ngIf="showPass" ion-button clear color="dark" class="eyecls" type="button" item-right (click)="showPassword()">\n        <ion-icon name="ios-eye-outline"></ion-icon>\n      </button> -->\n\n    </ion-item>\n  \n\n    <button (click)="Login()" ion-button class="outline loginbtn" mode="md" color="white" outline round large>\n      Login\n    </button>\n  </ion-list>\n  </div>\n\n</ion-content>\n'/*ion-inline-end:"/Users/bojjanaresh/Documents/GitHub/Decra_serviceProvider/src/pages/home/home.html"*/
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__["a" /* GenericProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__["a" /* LocalStorageProvider */]])
+    ], HomePage);
+    return HomePage;
+}());
+
+//# sourceMappingURL=home.js.map
 
 /***/ }),
 
@@ -577,19 +587,19 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(44);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(450);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_main_main__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_select_driver_select_driver__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_moreinfo_moreinfo__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_order_history_order_history__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_reject_reject__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_component__ = __webpack_require__(389);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_main_main__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__pages_select_driver_select_driver__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_moreinfo_moreinfo__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_order_history_order_history__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_reject_reject__ = __webpack_require__(149);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__providers_storage_storage__ = __webpack_require__(451);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_Storage__ = __webpack_require__(112);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_generic_generic__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_local_storage_local_storage__ = __webpack_require__(56);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__providers_generic_generic__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_local_storage_local_storage__ = __webpack_require__(47);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__ionic_native_geolocation__ = __webpack_require__(452);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -658,20 +668,20 @@ var AppModule = (function () {
 
 /***/ }),
 
-/***/ 450:
+/***/ 389:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(282);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(280);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase__ = __webpack_require__(247);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_local_storage_local_storage__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(113);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_main_main__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__providers_local_storage_local_storage__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_home_home__ = __webpack_require__(282);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_main_main__ = __webpack_require__(61);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -853,14 +863,14 @@ var StorageProvider = (function () {
 
 /***/ }),
 
-/***/ 55:
+/***/ 46:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GenericProvider; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_firebase_app__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -922,6 +932,7 @@ var GenericProvider = (function () {
         return new Promise(function (resolve, reject) {
             __WEBPACK_IMPORTED_MODULE_2_firebase_app___default.a.database().ref('driver_details/').on('value', function (itemSnapshot) {
                 var drivers = [];
+                console.log(itemSnapshot.val());
                 itemSnapshot.forEach(function (itemSnap) {
                     if (itemSnap.val().avaialble === "yes") {
                         console.log(itemSnap.val().email);
@@ -936,12 +947,13 @@ var GenericProvider = (function () {
             });
         });
     };
-    GenericProvider.prototype.updateStatus = function (order_id) {
+    GenericProvider.prototype.updateStatus = function (order_id, driver) {
         var ref = "orders/" + order_id + "/";
         return new Promise(function (resolve, reject) {
             __WEBPACK_IMPORTED_MODULE_2_firebase_app___default.a.database().ref(ref).on('value', function (itemSnapshot) {
                 __WEBPACK_IMPORTED_MODULE_2_firebase_app___default.a.database().ref(ref).update({
-                    order_status: "on_the_way"
+                    order_status: "on_the_way",
+                    driver_info: driver
                 });
                 console.log(itemSnapshot.val());
                 resolve(true);
@@ -1017,7 +1029,7 @@ var GenericProvider = (function () {
 
 /***/ }),
 
-/***/ 56:
+/***/ 47:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1128,21 +1140,21 @@ var LocalStorageProvider = (function () {
 
 /***/ }),
 
-/***/ 81:
+/***/ 61:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__ = __webpack_require__(55);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__ = __webpack_require__(56);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase_app__ = __webpack_require__(110);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__ = __webpack_require__(46);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__ = __webpack_require__(47);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase_app__ = __webpack_require__(68);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_firebase_app___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_firebase_app__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__select_driver_select_driver__ = __webpack_require__(147);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__moreinfo_moreinfo__ = __webpack_require__(148);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__order_history_order_history__ = __webpack_require__(149);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__reject_reject__ = __webpack_require__(150);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__select_driver_select_driver__ = __webpack_require__(146);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__moreinfo_moreinfo__ = __webpack_require__(147);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__order_history_order_history__ = __webpack_require__(148);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__reject_reject__ = __webpack_require__(149);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1195,7 +1207,15 @@ var MainPage = (function () {
             itemSnapshot.forEach(function (itemSnap) {
                 if (myEmail == itemSnap.val().provider_email) {
                     console.log(itemSnap.val().provider_email);
+                    //   let fromD = itemSnap.val().FromDate;
+                    //   let toD = itemSnap.val().ToDate;
+                    //  let   dt1 = new Date(fromD);
+                    //   let  dt2 = new Date(toD);
+                    //   let dif = Math.floor((Date.UTC(dt2.getFullYear(), dt2.getMonth(), dt2.getDate()) - Date.UTC(dt1.getFullYear(), dt1.getMonth(), dt1.getDate()) ) /(1000 * 60 * 60 * 24));
+                    //     console.log(dif);
+                    //   itemSnap.val()['diff'] = dif;
                     orders.push(itemSnap.val());
+                    //orders['difference'] = dif;
                 }
                 return false;
             });
@@ -1216,22 +1236,32 @@ var MainPage = (function () {
     };
     MainPage.prototype.selctDriver = function (o_id) {
         console.log(o_id);
-        this.genericPro.updateStatus(o_id);
         //send status update as notification to the user 
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__select_driver_select_driver__["a" /* SelectDriverPage */]);
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_5__select_driver_select_driver__["a" /* SelectDriverPage */], {
+            'ordr': o_id
+        });
     };
-    MainPage.prototype.viewMore = function (order_id) {
-        var viewOrd;
-        console.log(order_id);
-        this.myOrders.forEach(function (ord) {
-            console.log(ord);
-            if (order_id == ord.order_id) {
-                viewOrd = ord;
+    MainPage.prototype.viewMore = function (or_id) {
+        // let viewOrd:any;
+        // console.log(order_id);
+        // this.myOrders.forEach(ord => {
+        //   console.log(ord);
+        //   if(order_id == ord.order_id){
+        //     viewOrd = ord;
+        //   }
+        // });
+        if (or_id) {
+            var viewOrd = void 0;
+            for (var i = 0; i < this.myOrders.length; i++) {
+                if (this.myOrders[i].order_id === or_id) {
+                    console.log(this.myOrders[i]);
+                    viewOrd = this.myOrders[i];
+                }
             }
-        });
-        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__moreinfo_moreinfo__["a" /* MoreinfoPage */], {
-            vOrder: viewOrd
-        });
+            this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_6__moreinfo_moreinfo__["a" /* MoreinfoPage */], {
+                'vOrder': viewOrd
+            });
+        }
     };
     MainPage.prototype.ordershist = function () {
         this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_7__order_history_order_history__["a" /* OrderHistoryPage */]);
@@ -1241,11 +1271,12 @@ var MainPage = (function () {
     };
     MainPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-main',template:/*ion-inline-start:"/Users/bojjanaresh/Documents/GitHub/Decra_serviceProvider/src/pages/main/main.html"*/'<!--\n  Generated template for the MainPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content class="page">\n  <ion-row style="margin:2%; display: flex;">\n\n\n\n\n      <img class="hdrlogo" src="assets/imgs/Decra_white_clear.png">\n      <div class="mainpageDiv">\n          <h5 class="mainpageText p510">MAIN PAGE</h5>\n      </div>\n      <div class="mainpageDiv">\n          <h5 class="mainpageText p510">MAIN PAGE</h5>\n      </div>\n      \n  </ion-row>\n  <div class="welcomeDiv">\n        <h5 class="welcomeText">WELCOME NAResh Bojja</h5>\n    </div>\n\n  <ion-row>\n      <ion-col width-50>\n          <button (click)="ordershist()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:40%; " outline round large>\n    Order history\n  </button>\n      </ion-col>\n      <ion-col width-50>\n          <button (click)="Login()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:12%;" outline round large>\n    Extend request\n  </button>\n      </ion-col>\n  </ion-row>\n  <!-- <button class="btn-s-r" (click)="viewMore(order.order_id);">REJECT</button> -->\n\n\n  <!--==========================================================================================================-->\n\n  <ion-col class="datagrid grid">\n      <!--       remove "mt80per" while placing this table in screen 4-->\n      <h3 class="f3em">NEW ORDERS</h3>\n      <table class="table-s">\n          <thead>\n              <tr class="trbg">\n                  <th class="p36 b-r">#</th>\n                  <th class="p18 b-r">Customer Name</th>\n                  <th class="p18 b-r">Car Category</th>\n                  <th class="p18 b-r">Car Name</th>\n                  <th class="p18">Duration</th>\n              </tr>\n          </thead>\n          <tbody>\n              <tr class="mt10"  *ngFor= "let order of myOrders; let i = index;">\n                  <td class="p36 b-r btn-shadeblue" *ngIf="((i+1)%2)">{{i+1}}</td>\n                  <td class="p36 b-r btn-transp" *ngIf="!((i+1)%2)">{{i+1}}</td>\n\n                  <td class="b-r">{{order.name}}</td>\n                  <td class="b-r">{{order.category}}</td>\n                  <td class="b-r">{{order.manufacture}}</td>\n                  <td class="b-r"> {{order.FromDate}} to {{order.ToDate}}</td>\n                  <td class="btn-green b-r" (click)="selctDriver(order.order_id);">\n                      <ion-col ><button class="btn-s-g" >ACCEPT</button></ion-col>\n                  </td>\n                  <td class="btn-red b-r" (click)="reject(order.order_id);">\n                      <ion-col >\n                          <button class="btn-s-r" >REJECT</button>\n                      </ion-col>\n                  </td>\n                  <td class="btn-grey" (click)="viewMore()" (click)="viewMore(order.order_id);"> \n                      <ion-col><button class="btn-s-gy" >MORE INFO</button></ion-col>\n                  </td>\n\n              </tr>\n\n              <!----------------------------- iiiiiiii   -->\n              <!-- <tr>\n                  <td class="p36 b-r">2</td>\n                  <td class="b-r">James</td>\n                  <td class="b-r">Minibus</td>\n                  <td class="b-r">Chevrolet Orlando</td>\n                  <td class="b-r">2019-3-2 to 2019-0"3-03</td>\n                  <td class="btn-green b-r" (click)="myyynext()"> \n                      <ion-col><button class="btn-s-g">ACCEPT</button></ion-col>\n                  </td>\n                  <td class="btn-red b-r">\n                      <ion-col><button class="btn-s-r">REJECT</button></ion-col>\n                  </td>\n                  <td class="btn-grey">\n                      <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                  </td>\n              </tr>\n              <tr>\n                  <td class="p36 b-r">3</td>\n                  <td class="b-r">Arun Kumar</td>\n                  <td class="b-r">Roadster</td>\n                  <td class="b-r">BMW Z4</td>\n                  <td class="b-r">2019-3-2 to 2019-03-03</td>\n                  <td class="btn-green b-r">\n                      <ion-col><button class="btn-s-g">ACCEPT</button></ion-col>\n                  </td>\n                  <td class="btn-red b-r">\n                      <ion-col><button class="btn-s-r">REJECT</button></ion-col>\n                  </td>\n                  <td class="btn-grey">\n                      <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                  </td>\n              </tr>\n              <tr>\n                  <td class="p36 b-r">4</td>\n                  <td class="b-r">Santosh</td>\n                  <td class="b-r">Supermini</td>\n                  <td class="b-r">Volkswagen Polo</td>\n                  <td class="b-r">2019-3-2 to 2019-03-03</td>\n                  <td class="btn-green b-r">\n                      <ion-col><button class="btn-s-g">ACCEPT</button></ion-col>\n                  </td>\n                  <td class="btn-red b-r">\n                      <ion-col><button class="btn-s-r">REJECT</button></ion-col>\n                  </td>\n                  <td class="btn-grey">\n                      <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                  </td>\n              </tr>\n              <tr>\n                  <td class="p36 b-r">5</td>\n                  <td class="b-r">Sai Kiran</td>\n                  <td class="b-r">Bubble car</td>\n                  <td class="b-r">Renault Twizy</td>\n                  <td class="b-r">2019-3-2 to 2019-03-03</td>\n                  <td class="btn-green b-r">\n                      <ion-col><button class="btn-s-g">ACCEPT</button></ion-col>\n                  </td>\n                  <td class="btn-red b-r">\n                      <ion-col><button class="btn-s-r">REJECT</button></ion-col>\n                  </td>\n                  <td class="btn-grey">\n                      <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                  </td>\n              </tr>  -->\n          </tbody>\n      </table>\n  </ion-col>\n  \n   <!--==========================================================================================================-->\n\n \n  \n</ion-content>'/*ion-inline-end:"/Users/bojjanaresh/Documents/GitHub/Decra_serviceProvider/src/pages/main/main.html"*/,
+            selector: 'page-main',template:/*ion-inline-start:"/Users/bojjanaresh/Documents/GitHub/Decra_serviceProvider/src/pages/main/main.html"*/'<!--\n  Generated template for the MainPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-content class="page">\n  <ion-row style="margin:2%; display: flex;">\n\n\n\n\n      <img class="hdrlogo" src="assets/imgs/Decra_white_clear.png">\n      <div class="mainpageDiv">\n          <h5 class="mainpageText p510">MAIN PAGE</h5>\n      </div>\n      <div class="mainpageDiv">\n          <h5 class="mainpageText p510">MAIN PAGE</h5>\n      </div>\n      \n  </ion-row>\n  <div class="welcomeDiv">\n        <h5 class="welcomeText">WELCOME NAResh Bojja</h5>\n    </div>\n\n  <ion-row>\n      <ion-col width-50>\n          <button (click)="ordershist()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:40%; " outline round large>\n    Order history\n  </button>\n      </ion-col>\n      <ion-col width-50>\n          <button (click)="Login()" ion-button class="outline loginbtn" mode="md" color="white" style="margin-left:12%;" outline round large>\n    Extend request\n  </button>\n      </ion-col>\n  </ion-row>\n  <!-- <button class="btn-s-r" (click)="viewMore(order.order_id);">REJECT</button> -->\n\n\n  <!--==========================================================================================================-->\n\n  <ion-col class="datagrid grid">\n      <!--       remove "mt80per" while placing this table in screen 4-->\n      <h3 class="f3em">NEW ORDERS</h3>\n      <table class="table-s">\n          <thead>\n              <tr class="trbg">\n                  <th class="p36 b-r">#</th>\n                  <th class="p18 b-r">Customer Name</th>\n                  <th class="p18 b-r">Car Category</th>\n                  <th class="p18 b-r">Car Name</th>\n                  <th class="p18">Duration</th>\n              </tr>\n          </thead>\n          <tbody>\n              <tr class="mt10"  *ngFor= "let order of myOrders; let i = index;">\n                  <td class="p36 b-r btn-shadeblue" *ngIf="((i+1)%2)">{{i+1}}</td>\n                  <td class="p36 b-r btn-transp" *ngIf="!((i+1)%2)">{{i+1}}</td>\n\n                  <td class="b-r">{{order.name}}</td>\n                  <td class="b-r">{{order.category}}</td>\n                  <td class="b-r">{{order.manufacture}}</td>\n                  <td class="b-r"> {{order.totalDays}} Days</td>\n                  <td class="btn-green b-r" (click)="selctDriver(order.order_id);">\n                      <ion-col ><button class="btn-s-g" >ACCEPT</button></ion-col>\n                  </td>\n                  <td class="btn-red b-r" (click)="reject(order.order_id);">\n                      <ion-col >\n                          <button class="btn-s-r" >REJECT</button>\n                      </ion-col>\n                  </td>\n                  <td class="btn-grey" (click)="viewMore()" (click)="viewMore(order.order_id);"> \n                      <ion-col><button class="btn-s-gy" >MORE INFO</button></ion-col>\n                  </td>\n\n              </tr>\n\n              <!----------------------------- iiiiiiii   -->\n              <!-- <tr>\n                  <td class="p36 b-r">2</td>\n                  <td class="b-r">James</td>\n                  <td class="b-r">Minibus</td>\n                  <td class="b-r">Chevrolet Orlando</td>\n                  <td class="b-r">2019-3-2 to 2019-0"3-03</td>\n                  <td class="btn-green b-r" (click)="myyynext()"> \n                      <ion-col><button class="btn-s-g">ACCEPT</button></ion-col>\n                  </td>\n                  <td class="btn-red b-r">\n                      <ion-col><button class="btn-s-r">REJECT</button></ion-col>\n                  </td>\n                  <td class="btn-grey">\n                      <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                  </td>\n              </tr>\n              <tr>\n                  <td class="p36 b-r">3</td>\n                  <td class="b-r">Arun Kumar</td>\n                  <td class="b-r">Roadster</td>\n                  <td class="b-r">BMW Z4</td>\n                  <td class="b-r">2019-3-2 to 2019-03-03</td>\n                  <td class="btn-green b-r">\n                      <ion-col><button class="btn-s-g">ACCEPT</button></ion-col>\n                  </td>\n                  <td class="btn-red b-r">\n                      <ion-col><button class="btn-s-r">REJECT</button></ion-col>\n                  </td>\n                  <td class="btn-grey">\n                      <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                  </td>\n              </tr>\n              <tr>\n                  <td class="p36 b-r">4</td>\n                  <td class="b-r">Santosh</td>\n                  <td class="b-r">Supermini</td>\n                  <td class="b-r">Volkswagen Polo</td>\n                  <td class="b-r">2019-3-2 to 2019-03-03</td>\n                  <td class="btn-green b-r">\n                      <ion-col><button class="btn-s-g">ACCEPT</button></ion-col>\n                  </td>\n                  <td class="btn-red b-r">\n                      <ion-col><button class="btn-s-r">REJECT</button></ion-col>\n                  </td>\n                  <td class="btn-grey">\n                      <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                  </td>\n              </tr>\n              <tr>\n                  <td class="p36 b-r">5</td>\n                  <td class="b-r">Sai Kiran</td>\n                  <td class="b-r">Bubble car</td>\n                  <td class="b-r">Renault Twizy</td>\n                  <td class="b-r">2019-3-2 to 2019-03-03</td>\n                  <td class="btn-green b-r">\n                      <ion-col><button class="btn-s-g">ACCEPT</button></ion-col>\n                  </td>\n                  <td class="btn-red b-r">\n                      <ion-col><button class="btn-s-r">REJECT</button></ion-col>\n                  </td>\n                  <td class="btn-grey">\n                      <ion-col><button class="btn-s-gy">MORE INFO</button></ion-col>\n                  </td>\n              </tr>  -->\n          </tbody>\n      </table>\n  </ion-col>\n  \n   <!--==========================================================================================================-->\n\n \n  \n</ion-content>'/*ion-inline-end:"/Users/bojjanaresh/Documents/GitHub/Decra_serviceProvider/src/pages/main/main.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__["a" /* GenericProvider */], __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__["a" /* LocalStorageProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__["a" /* GenericProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_generic_generic__["a" /* GenericProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__["a" /* LocalStorageProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__providers_local_storage_local_storage__["a" /* LocalStorageProvider */]) === "function" && _d || Object])
     ], MainPage);
     return MainPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=main.js.map
